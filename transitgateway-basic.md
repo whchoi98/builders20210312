@@ -54,7 +54,7 @@ Seoul-VPC-HQ.yml
 
 별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2818%29.png)
 
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
@@ -90,29 +90,39 @@ AWS 관리콘솔 - VPC 를 선택합니다.
 
 4개의 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2817%29.png)
+![](.gitbook/assets/image%20%2821%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2825%29.png)
+![](.gitbook/assets/image%20%2830%29.png)
 
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%282%29.png)
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image%20%2812%29.png)
 
 ### Task2. TGW Attachment 확인. 
 
 #### `VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image%20%2815%29.png)
 
-Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 나머지 VPC들도 선택해서 확인해 봅니다.
+Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%2820%29.png)
+
+ 아래에서 나머지 VPC들도 선택해서 확인해 봅니다. 
+
+```text
+Seoul-TGW-Attach-Seoul-VPC-STG
+Seoul-TGW-Attach-Seoul-VPC-DEV
+Seoul-TGW-Attach-Seoul-VPC-PRD
+```
+
+
 
 ### Task3. TGW Routing Table 확인. 
 
@@ -124,7 +134,7 @@ East-To-West 트래픽을 위한 라우팅 테이블 도메인, North-To-South �
 
 **해당 라우팅 테이블 도에인에는 Seoul-VPC-HQ만 허용됩니다.**
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 Propagation 탭을 눌러서, Seoul-VPC-HQ 테이블이 업데이트 되었는지 확인합니다.
 
@@ -134,7 +144,7 @@ North-To-South 라우팅 테이블의 Routes를 선택해서 Static Route 를 �
 
 0.0.0.0/0이 목적지인 트래픽은 모두 Seoul-VPC-HQ로 향하게 구성되어 있으며, 이것은 기본값이 아니고, Cloudformation yaml에서 선언한 것입니다. 다음 단원에서 Seoul-VPC-PRD의 인스턴스들이 , Seoul-VPC-HQ를 통해서 외부에 접속하도록 하기 위해서 설정되었습니다.
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](.gitbook/assets/image%20%2817%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다.**
 
@@ -144,7 +154,7 @@ North-To-South 라우팅 테이블의 Routes를 선택해서 Static Route 를 �
 
 Routing Propagations를 선택해서, 모든 라우팅 테이블을 포함하고 있는지 확인합니다. 연결에는 Seoul-VPC-HQ가 없지만, 다른 라우팅 테이블 도메인에 포함되어 있습니다. 라우팅 테이블을 East-To-West에도 포함 시킨 것을 확인 할 수 있습니다.
 
-![](.gitbook/assets/image%20%2822%29.png)
+![](.gitbook/assets/image%20%2826%29.png)
 
 East-To-West 라우팅 테이블의 Routes를 선택해서 Propogation 된 테이블들이 정상적으로 구성되었는지 확인합니다.
 
