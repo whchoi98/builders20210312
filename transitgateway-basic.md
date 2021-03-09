@@ -12,9 +12,7 @@ AWS TransitGateway의 기본 동작 이해를 위해, 가장 기본이 되는 �
 
 아래 그림은 이번 Chapter에서 구성해 볼 아키텍쳐 입니다. 
 
-
-
-### Task1. Cloudformation 구성하기
+### Task1. VPC 구성하기
 
 Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다. 
 
@@ -36,7 +34,7 @@ Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 
 
 **Cloudformation에서 먼저 새로운 스택을 생성합니다.**
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%281%29.png)
 
 **앞서 다운로드 받은 yaml 파일들 중에 `Seoul-VPC-HQ.yml` 파일을 업로드 합니다.**
 
@@ -44,11 +42,11 @@ Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 
 Seoul-VPC-HQ.yml
 ```
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%282%29.png)
 
 ![](.gitbook/assets/image%20%284%29.png)
 
-![](.gitbook/assets/image%20%285%29.png)
+![](.gitbook/assets/image%20%286%29.png)
 
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
@@ -58,15 +56,57 @@ Seoul-VPC-STG.yml
 Seoul-VPC-DEV.yml
 ```
 
-4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.
+4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다. 
 
- 
+![](.gitbook/assets/image%20%287%29.png)
 
-![](.gitbook/assets/image%20%286%29.png)
+Task. TGW구성하기.
+
+4개의 VPC를 연결할 TransitGateway를 Region에 Cloudformation으로 생성합니다.
+
+![](.gitbook/assets/image.png)
+
+![](.gitbook/assets/image%20%283%29.png)
 
 
 
-\*\*\*\*
+#### Windows Session manager plugin 설치
 
+```text
+https://s3.amazonaws.com/session-manager-downloads/plugin/latest/windows/SessionManagerPluginSetup.exe
+```
 
+#### Mac OS용 Session manager plugin 설치
+
+번들 설치 관리자를 다운로드합니다.
+
+```text
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac/sessionmanager-bundle.zip" -o "sessionmanager-bundle.zip"
+```
+
+패키지의 압축을 풉니다.
+
+```text
+unzip sessionmanager-bundle.zip
+```
+
+설치 명령을 실행합니다.
+
+```text
+sudo ./sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin
+```
+
+Fedora Linux 에서 Session Manager Plugin 설치
+
+```text
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
+sudo yum install -y session-manager-plugin.rpm
+```
+
+Ubuntu에서 Session Manager Plugin 설치
+
+```text
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+sudo dpkg -i session-manager-plugin.deb
+```
 
