@@ -60,7 +60,7 @@ Seoul-VPC-DEV.yml
 
 ![](.gitbook/assets/image%20%287%29.png)
 
-Task. TGW구성하기.
+### Task2. TGW구성하기.
 
 4개의 VPC를 연결할 TransitGateway를 Region에 Cloudformation으로 생성합니다.
 
