@@ -8,3 +8,23 @@ AWS TransitGateway의 기본 동작 이해를 위해, 가장 기본이 되는 �
 
 아래 그림은 이번 Chapter에서 구성해 볼 아키텍쳐 입니다. 
 
+
+
+### Task1. Cloudformation 구성하기
+
+Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다. 
+
+#### 1.사전 준비하기 
+
+서울 리전에 4개의 VPC를 구성하고, 사전에 구성된 TGW를 배포합니다.
+
+아래 Github에서 실습에 사용할 Cloudformation yaml 파일을 다운로드 받습니다.
+
+```text
+git clone https://github.com/whchoi98/builders20210312
+```
+
+
+
+
+
