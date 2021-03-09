@@ -114,9 +114,15 @@ Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subn
 
 ![](.gitbook/assets/image%20%288%29.png)
 
+### Task3. TGW Routing Table 확인. 
+
 **`VPC-Transit Gateway-Transit Gateway- Transit Gateway 라우팅 테이블`** 을 선택해서 라우팅 테이블 구성을 확인해 봅니다. 라우팅 테이블은 2개로 구성되어 있습니다.
 
 East-To-West 트래픽을 위한 라우팅 테이블 도메인, North-To-South 트래픽을 위한 라우팅 테이블 도메인으로 구성되어 있습니다. Seoul-VPC-HQ 는 North-To-South 라우팅 테이블 도메인에 속해 있습니다.
+
+**먼저 North-To-South 라우팅 테이블 도메인을 확인합니다.**
+
+**해당 라우팅 테이블 도에인에는 Seoul-VPC-HQ만 허용됩니다.**
 
 ![](.gitbook/assets/image%20%2812%29.png)
 
@@ -130,13 +136,35 @@ North-To-South 라우팅 테이블의 Routes를 선택해서 Static Route 를 �
 
 ![](.gitbook/assets/image%20%2815%29.png)
 
+**East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다.**
 
+해당 라우팅테이블 도메인에는 Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV만 연결되어 있습니다.
 
 ![](.gitbook/assets/image%20%287%29.png)
 
+Routing Propagations를 선택해서, 모든 라우팅 테이블을 포함하고 있는지 확인합니다. 연결에는 Seoul-VPC-HQ가 없지만, 다른 라우팅 테이블 도메인에 포함되어 있습니다. 라우팅 테이블을 East-To-West에도 포함 시킨 것을 확인 할 수 있습니다.
+
 ![](.gitbook/assets/image%20%2822%29.png)
 
+East-To-West 라우팅 테이블의 Routes를 선택해서 Propogation 된 테이블들이 정상적으로 구성되었는지 확인합니다.
+
 ![](.gitbook/assets/image%20%284%29.png)
+
+## 3. TGW 기반 트래픽 제어
+
+Task1. Production VPC 인터넷 제어
+
+Production VPC는 이미 IGW와 NAT Gateway가 포함되어 있습니다. Production VPC의 Private Subnet에 배치되어 있는 EC2 인스턴스를 Transit Gateway로 경유해서 Seoul-VPC-HQ의 NATGW를 통해 사용하도록 합니다.
+
+
+
+
+
+
+
+
+
+Task2.
 
 #### Windows Session manager plugin 설치
 
