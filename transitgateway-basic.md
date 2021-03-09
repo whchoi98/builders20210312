@@ -4,7 +4,7 @@ description: 'Update : 2021-03-09'
 
 # TransitGateway 구성하기
 
-## TransitGateway 기본 구성
+## 1.TransitGateway 기본 구성
 
 ### 구성 아키텍쳐 소개
 
@@ -66,7 +66,7 @@ Seoul-VPC-DEV.yml
 
 4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.  4개의 VPC는 각 3분 내외에 생성됩니다. 동시에 수행해도 가능합니다.
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%289%29.png)
 
 ### Task2. TGW구성하기.
 
@@ -80,19 +80,21 @@ Seoul-VPC-DEV.yml
 
 5분 이내에 TransitGateway가 완성됩니다.
 
-![](.gitbook/assets/image%20%287%29.png)
+![](.gitbook/assets/image%20%288%29.png)
 
-## TransitGateway 구성 확인
+## 2.TransitGateway 구성 확인
 
-
+Task1.TGW 구성 확
 
 AWS 관리콘솔 - VPC 를 선택합니다.
 
 4개의 VPC가 정상적으로 생성되었는지 확인합니다.
 
-
+![](.gitbook/assets/image%20%287%29.png)
 
 AWS 관리콘솔 EC2를 선택합니다.
+
+![](.gitbook/assets/image%20%2811%29.png)
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
