@@ -84,7 +84,7 @@ Seoul-VPC-DEV.yml
 
 ## 2.TransitGateway 구성 확인
 
-Task1.TGW 구성 확
+### Task1.TGW 구성 확인 
 
 AWS 관리콘솔 - VPC 를 선택합니다.
 
