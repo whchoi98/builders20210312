@@ -30,11 +30,17 @@ git clone https://github.com/whchoi98/builders20210312
 
 #### 2.Cloudformation 생성.
 
+Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 기반으로 생성합니다.
+
 **먼저 새로운 스택을 생성합니다.**
 
 ![](.gitbook/assets/image%20%282%29.png)
 
-**앞서 다운로드 받은 yaml 파일들 중에 `seoul-vpc-hq.yml` 파일을 업로드 합니다.**
+**앞서 다운로드 받은 yaml 파일들 중에 `Seoul-VPC-HQ.yml` 파일을 업로드 합니다.**
+
+```text
+Seoul-VPC-HQ.yml
+```
 
 ![](.gitbook/assets/image%20%283%29.png)
 
@@ -42,7 +48,17 @@ git clone https://github.com/whchoi98/builders20210312
 
 ![](.gitbook/assets/image%20%285%29.png)
 
-동
+**다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
+
+```text
+Seoul-VPC-PRD.yml
+Seoul-VPC-STG.yml
+Seoul-VPC-DEV.yml
+```
+
+
+
+
 
 \*\*\*\*
 
