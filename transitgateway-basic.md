@@ -104,6 +104,8 @@ VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되�
 
 ![](.gitbook/assets/image%20%2814%29.png)
 
+### Task2. TGW Attachment 확인. 
+
 #### `VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%2821%29.png)
