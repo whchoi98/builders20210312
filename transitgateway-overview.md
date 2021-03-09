@@ -1,3 +1,7 @@
+---
+description: 'Update : 2021-03-09'
+---
+
 # TransitGateway Overview
 
 AWS Transit Gateway는 중앙 허브를 통해 VPC와 온프레미스 네트워크를 연결합니다. 복잡한 피어링 관계를 제거하여 네트워크를 간소화합니다. 클라우드 라우터 역할을 하므로 새로운 연결을 한 번만 추가하면 됩니다.
