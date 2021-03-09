@@ -24,7 +24,17 @@ Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다.
 git clone https://github.com/whchoi98/builders20210312
 ```
 
+#### 2.Cloudformation 생성.
 
+**먼저 새로운 스택을 생성합니다.**
+
+![](.gitbook/assets/image%20%282%29.png)
+
+**앞서 다운로드 받은 yaml 파일들 중에 `seoul-vpc-hq.yml` 파일을 업로드 합니다.**
+
+\*\*\*\*
+
+\*\*\*\*
 
 
 
