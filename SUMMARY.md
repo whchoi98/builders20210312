@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Builders-2021-03-12](README.md)
+* [소개 및 목차](README.md)
 
 ## TransitGateway
 

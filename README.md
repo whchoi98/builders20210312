@@ -2,7 +2,7 @@
 description: 이 웹사이트는 AWS Builders 2021년 3월 12일 실습과 데모를 위한 페이지 입니다.
 ---
 
-# Builders-2021-03-12
+# 소개 및 목차
 
 ## TransitGateway
 
@@ -18,13 +18,13 @@ description: 이 웹사이트는 AWS Builders 2021년 3월 12일 실습과 데�
 
 ## Gateway Load balancer
 
-### GWLB Overview
+### [GWLB Overview](gateway-loadbalancer/gwlb-overview.md)
 
 
 
-Network Firewall
+## Network Firewall
 
-Network Firewall Overview
+### [Network Firewall Overview](network-firewall/nwfw-overview.md)
 
 
 
