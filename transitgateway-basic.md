@@ -1,3 +1,7 @@
+---
+description: 'Update : 2021-03-09'
+---
+
 # TransitGateway 구성하기
 
 ## TransitGateway 기본 구성
