@@ -32,7 +32,9 @@ git clone https://github.com/whchoi98/builders20210312
 
 Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 기반으로 생성합니다.
 
-**먼저 새로운 스택을 생성합니다.**
+**AWS 콘솔에서 서울 리전 \(ap-northeast-2\)를 선택하고, Cloudformation 서비스를 선택합니다.**
+
+**Cloudformation에서 먼저 새로운 스택을 생성합니다.**
 
 ![](.gitbook/assets/image%20%282%29.png)
 
@@ -56,7 +58,11 @@ Seoul-VPC-STG.yml
 Seoul-VPC-DEV.yml
 ```
 
+4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.
 
+ 
+
+![](.gitbook/assets/image%20%286%29.png)
 
 
 
