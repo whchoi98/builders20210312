@@ -12,7 +12,7 @@ AWS TransitGateway의 기본 동작 이해를 위해, 가장 기본이 되는 �
 
 아래 그림은 이번 Chapter에서 구성해 볼 아키텍쳐 입니다. 
 
-![](.gitbook/assets/image%20%2855%29.png)
+![](.gitbook/assets/image%20%2878%29.png)
 
 ### Task1. VPC 구성하기
 
@@ -36,7 +36,7 @@ Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 
 
 **Cloudformation에서 먼저 새로운 스택을 생성합니다.**
 
-![](.gitbook/assets/image%20%287%29.png)
+![](.gitbook/assets/image%20%2810%29.png)
 
 **앞서 다운로드 받은 yaml 파일들 중에 `Seoul-VPC-HQ.yml` 파일을 업로드 합니다.**
 
@@ -44,11 +44,11 @@ Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 
 Seoul-VPC-HQ.yml
 ```
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%2814%29.png)
 
 다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다. 
 
-![](.gitbook/assets/image%20%2818%29.png)
+![](.gitbook/assets/image%20%2825%29.png)
 
 {% hint style="warning" %}
 스택이름을 파일명과 다르게 입력하지 마십시요. 이후 과정에서 TransitGateway의 yaml파일은 , VPC yml 에서 생성된 값들을 import 해서 TGW를 생성합니다. 스택이름을 파일명과 다르게 할 경우, TGW를 생성할 때 에러가 발생합니다.
@@ -56,7 +56,7 @@ Seoul-VPC-HQ.yml
 
 별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
-![](.gitbook/assets/image%20%2828%29.png)
+![](.gitbook/assets/image%20%2838%29.png)
 
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
@@ -68,7 +68,7 @@ Seoul-VPC-DEV.yml
 
 4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.  4개의 VPC는 각 3분 내외에 생성됩니다. 동시에 수행해도 가능합니다.
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%283%29.png)
 
 ### 
 
@@ -76,15 +76,15 @@ Seoul-VPC-DEV.yml
 
 4개의 VPC를 연결할 TransitGateway를 Region에 Cloudformation으로 생성합니다.
 
-![](.gitbook/assets/image%20%281%29.png)
+![](.gitbook/assets/image%20%282%29.png)
 
 다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다. \(TGW는 스택이름을 다르게 지정해도, 본 랩을 구성하는데 문제가 없습니다.\)
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image%20%2821%29.png)
 
 5분 이내에 TransitGateway가 완성됩니다.
 
-![](.gitbook/assets/image%20%284%29.png)
+![](.gitbook/assets/image%20%286%29.png)
 
 ## 2.TransitGateway 구성 확인
 
@@ -94,19 +94,19 @@ AWS 관리콘솔 - VPC 를 선택합니다.
 
 4개의 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2835%29.png)
+![](.gitbook/assets/image%20%2850%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2854%29.png)
+![](.gitbook/assets/image%20%2876%29.png)
 
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%285%29.png)
 
-![](.gitbook/assets/image%20%2820%29.png)
+![](.gitbook/assets/image%20%2827%29.png)
 
 ### 
 
@@ -114,14 +114,14 @@ VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되�
 
 #### `VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](.gitbook/assets/image%20%2832%29.png)
 
 Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
 1. **TGW Routing Table과 Attachment가 연결된 상태를 확인**
 2. **Attachment가 VPC의 어떤 Subnet과 연결되었는지 확인** 
 
-![](.gitbook/assets/image%20%2834%29.png)
+![](.gitbook/assets/image%20%2849%29.png)
 
  아래에서 나머지 VPC들도 선택해서 확인해 봅니다. 
 
@@ -145,31 +145,31 @@ East-To-West 트래픽을 위한 라우팅 테이블 도메인, North-To-South �
 
 Associations와 Propagation 탭을 눌러서, Seoul-VPC-HQ 연결과 Seoul-VPC-HQ의 CIDR가 정상적으로 업데이트 되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2817%29.png)
+![](.gitbook/assets/image%20%2824%29.png)
 
-![](.gitbook/assets/image%20%2841%29.png)
+![](.gitbook/assets/image%20%2859%29.png)
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
-![](.gitbook/assets/image%20%2849%29.png)
+![](.gitbook/assets/image%20%2871%29.png)
 
 **이제 East-To-West 라우팅 테이블 도메인을 확인합니다.**
 
 **해당 라우팅 테이블 도에인에는 Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 연결했습니다.**
 
-![](.gitbook/assets/image%20%2846%29.png)
+![](.gitbook/assets/image%20%2866%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다. Association 탭을 선택해서 3개의 VPC가 Association 되었는지 확인합니다.**
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2823%29.png)
 
 Propagations 탭을 선택해서, 3개의 VPC CIDR를 Propagation 하는지 확인합니다.
 
-![](.gitbook/assets/image%20%2832%29.png)
+![](.gitbook/assets/image%20%2844%29.png)
 
 Routing 탭을 선택해서, 앞서 Propagation 된 Route가 정상적으로 등록되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2830%29.png)
+![](.gitbook/assets/image%20%2842%29.png)
 
 #### Cloudformation을 통해서 모두 정상적으로 구성되었습니다.
 
@@ -302,7 +302,7 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 
 **목표 구성과 필요작업은 아래와 같습니다.**
 
-![](.gitbook/assets/image%20%2827%29.png)
+![](.gitbook/assets/image%20%2837%29.png)
 
 ### 
 
@@ -339,13 +339,13 @@ VPC- 가상 프라이빗 클라우드 - 라우팅 테이블에서 아래 라우�
 Seoul-VPC-STG-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%2810%29.png)
+![](.gitbook/assets/image%20%2816%29.png)
 
 ```text
 Seoul-VPC-DEV-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image%20%2828%29.png)
 
 이제 다시 앞서 실행한 각 인스턴스에서의 Ping이 정상적으로 처리되는 지 확인합니다.
 
@@ -388,7 +388,7 @@ ping SEOUL-VPC-STG-Private
 Seoul-VPC-PRD-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%2845%29.png)
+![](.gitbook/assets/image%20%2865%29.png)
 
 이제 다시 앞서 실행한 각 인스턴스에서의 Ping이 정상적으로 처리되는 지 확인합니다.
 
@@ -411,9 +411,9 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 10.2.21.101/32
 ```
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](.gitbook/assets/image%20%2822%29.png)
 
-![](.gitbook/assets/image%20%2819%29.png)
+![](.gitbook/assets/image%20%2826%29.png)
 
 **다시 Blackhole을 해제합니다.**
 
@@ -431,9 +431,9 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 
 **`Create Static Route`**를 선택하고, 0.0.0.0/0에 대한 경로를 Seoul-TGW-Seoul-VPC-HQ Attachment  추가합니다.
 
-![](.gitbook/assets/image%20%2838%29.png)
+![](.gitbook/assets/image%20%2854%29.png)
 
-![](.gitbook/assets/image%20%2833%29.png)
+![](.gitbook/assets/image%20%2847%29.png)
 
 이제 Seoul-VPC-PRD의 Private Subnet 라우팅에서 인터넷으로 가는 목적지를 NAT Gateway에서 Transit Gateway로 아래와 같이 변경합니다. 
 
@@ -441,7 +441,7 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 Seoul-VPC-PRD-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%286%29.png)
+![](.gitbook/assets/image%20%288%29.png)
 
 **Seoul-VPC-PRD-Private-10.1.21.101 인스턴스에서 www.aws.com 으로 ping을 실행해 봅니다.**
 
@@ -465,7 +465,7 @@ TGW North-To-South 라우팅테이블에 아래와 같이 Seoul-VPC-HQ로 트래
 
 **`Create Static Route`**를 선택하고, 10.1.21.0/24 에 대한 경로를 Seoul-TGW-Seoul-VPC-PRD Attachment  추가합니다.
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image%20%2815%29.png)
 
 **이제 Seoul-VPC-PRD-Private-10.1.21.101 인스턴스에서 정상적으로 외부 접속이 되는지 확인해 봅니다.**
 

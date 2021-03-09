@@ -30,13 +30,13 @@ AWS Transit Gateway 멀티캐스트 지원은 동일한 콘텐츠를 다수의 �
 
 ####  AWS Transit Gateway 미사용 시 <a id="Without_AWS_Transit_Gateway"></a>
 
-![](.gitbook/assets/image%20%2823%29.png)
+![](.gitbook/assets/image%20%2831%29.png)
 
 확장할 때마다 복잡성이 증가합니다. 각 VPC 안에 라우팅 테이블을 유지해야 하고 개별 네트워크 게이트웨이를 사용하여 각 온사이트 위치에 연결해야 합니다.
 
 ####  AWS Transit Gateway 사용 시 <a id="With_AWS_Transit_Gateway"></a>
 
-![](.gitbook/assets/image%20%2852%29.png)
+![](.gitbook/assets/image%20%2874%29.png)
 
 네트워크가 간소화되고 확장성이 개선됩니다. AWS Transit Gateway가 각 VPC 또는 VPN 간의 모든 트래픽을 라우팅하므로, 단일 위치에서 모든 트래픽을 관리하고 모니터링할 수 있습니다.
 
