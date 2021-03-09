@@ -12,6 +12,8 @@ AWS TransitGateway의 기본 동작 이해를 위해, 가장 기본이 되는 �
 
 아래 그림은 이번 Chapter에서 구성해 볼 아키텍쳐 입니다. 
 
+![](.gitbook/assets/image%20%2855%29.png)
+
 ### Task1. VPC 구성하기
 
 Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다. 
@@ -54,7 +56,7 @@ Seoul-VPC-HQ.yml
 
 별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
-![](.gitbook/assets/image%20%2827%29.png)
+![](.gitbook/assets/image%20%2828%29.png)
 
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
@@ -67,6 +69,8 @@ Seoul-VPC-DEV.yml
 4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.  4개의 VPC는 각 3분 내외에 생성됩니다. 동시에 수행해도 가능합니다.
 
 ![](.gitbook/assets/image%20%282%29.png)
+
+### 
 
 ### Task2. TGW구성하기.
 
@@ -90,19 +94,21 @@ AWS 관리콘솔 - VPC 를 선택합니다.
 
 4개의 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2834%29.png)
+![](.gitbook/assets/image%20%2835%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2853%29.png)
+![](.gitbook/assets/image%20%2854%29.png)
 
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%283%29.png)
 
 ![](.gitbook/assets/image%20%2820%29.png)
+
+### 
 
 ### Task4. TGW Attachment 확인. 
 
@@ -115,7 +121,7 @@ Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subn
 1. **TGW Routing Table과 Attachment가 연결된 상태를 확인**
 2. **Attachment가 VPC의 어떤 Subnet과 연결되었는지 확인** 
 
-![](.gitbook/assets/image%20%2833%29.png)
+![](.gitbook/assets/image%20%2834%29.png)
 
  아래에서 나머지 VPC들도 선택해서 확인해 봅니다. 
 
@@ -124,6 +130,8 @@ Seoul-TGW-Attach-Seoul-VPC-STG
 Seoul-TGW-Attach-Seoul-VPC-DEV
 Seoul-TGW-Attach-Seoul-VPC-PRD
 ```
+
+### 
 
 ### Task5. TGW Routing Table 확인. 
 
@@ -139,17 +147,17 @@ Associations와 Propagation 탭을 눌러서, Seoul-VPC-HQ 연결과 Seoul-VPC-H
 
 ![](.gitbook/assets/image%20%2817%29.png)
 
-![](.gitbook/assets/image%20%2840%29.png)
+![](.gitbook/assets/image%20%2841%29.png)
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
-![](.gitbook/assets/image%20%2848%29.png)
+![](.gitbook/assets/image%20%2849%29.png)
 
 **이제 East-To-West 라우팅 테이블 도메인을 확인합니다.**
 
 **해당 라우팅 테이블 도에인에는 Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 연결했습니다.**
 
-![](.gitbook/assets/image%20%2845%29.png)
+![](.gitbook/assets/image%20%2846%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다. Association 탭을 선택해서 3개의 VPC가 Association 되었는지 확인합니다.**
 
@@ -157,11 +165,11 @@ propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하�
 
 Propagations 탭을 선택해서, 3개의 VPC CIDR를 Propagation 하는지 확인합니다.
 
-![](.gitbook/assets/image%20%2831%29.png)
+![](.gitbook/assets/image%20%2832%29.png)
 
 Routing 탭을 선택해서, 앞서 Propagation 된 Route가 정상적으로 등록되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2829%29.png)
+![](.gitbook/assets/image%20%2830%29.png)
 
 #### Cloudformation을 통해서 모두 정상적으로 구성되었습니다.
 
@@ -275,6 +283,29 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 
 ```
 
+### 시나리오 소개
+
+#### 다음과 같은 시나리오 구성으로 Task7~9를 수행합니다.
+
+**1.빌더스 컴퍼니는 아래와 같은 VPC를 하나의 계정에 소유하고 있습니다.**
+
+* **IT Control Tower :  Seoul-VPC-HQ**
+* **Production Workload : Seoul-VPC-PRD**
+* **Staging Workload : Seoul-VPC-STG**
+* **Dev Workload : Seoul-VPC-Dev**
+
+**2.STG,DEV 간의 개발 작업 종료 후 잦은 네트워크 연결이 필요합니다.**
+
+**3.STG,DEV 완료 후에 잠시 동안 PRD와 연결이 필요합니다.**
+
+**4. PRD 가 개시되기 직전에 인터넷을 차단하고, HQ를 통해서 인터넷에 연결되며 보안을 강화합니다.**
+
+**목표 구성과 필요작업은 아래와 같습니다.**
+
+![](.gitbook/assets/image%20%2827%29.png)
+
+### 
+
 ### Task7. Staging과 Dev 연결 
 
 Seoul-VPC-STG와 Seoul-VPC-DEV를 TGW를 통해 연결 구성해 봅니다.
@@ -322,6 +353,8 @@ Seoul-VPC-DEV-Private-Subnet-A-RT
 **이제 Dev환경에서 Stage환경으로 연결이 되었습니다.** 
 {% endhint %}
 
+### 
+
 ### Task8. Production 연결
 
 Dev, Stage 환경에서 모든 준비가 완료되고 필요 요구에 따라 Production으로 연결이 필요하게 되었습니다.
@@ -355,7 +388,7 @@ ping SEOUL-VPC-STG-Private
 Seoul-VPC-PRD-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%2844%29.png)
+![](.gitbook/assets/image%20%2845%29.png)
 
 이제 다시 앞서 실행한 각 인스턴스에서의 Ping이 정상적으로 처리되는 지 확인합니다.
 
@@ -384,6 +417,8 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 
 **다시 Blackhole을 해제합니다.**
 
+### 
+
 ### Task9. Production과  HQ 연결
 
 이제 모든 작업이 완료되고, Production 개시 단계입니다. 보안 강화를 위해 SEOUL-HQ-VPC를 통해서 외부 연결을 하도록 합니다.
@@ -396,9 +431,9 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 
 **`Create Static Route`**를 선택하고, 0.0.0.0/0에 대한 경로를 Seoul-TGW-Seoul-VPC-HQ Attachment  추가합니다.
 
-![](.gitbook/assets/image%20%2837%29.png)
+![](.gitbook/assets/image%20%2838%29.png)
 
-![](.gitbook/assets/image%20%2832%29.png)
+![](.gitbook/assets/image%20%2833%29.png)
 
 이제 Seoul-VPC-PRD의 Private Subnet 라우팅에서 인터넷으로 가는 목적지를 NAT Gateway에서 Transit Gateway로 아래와 같이 변경합니다. 
 
