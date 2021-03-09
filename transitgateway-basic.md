@@ -32,7 +32,13 @@ git clone https://github.com/whchoi98/builders20210312
 
 **앞서 다운로드 받은 yaml 파일들 중에 `seoul-vpc-hq.yml` 파일을 업로드 합니다.**
 
-\*\*\*\*
+![](.gitbook/assets/image%20%283%29.png)
+
+![](.gitbook/assets/image%20%284%29.png)
+
+![](.gitbook/assets/image%20%285%29.png)
+
+동
 
 \*\*\*\*
 
