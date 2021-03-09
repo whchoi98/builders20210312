@@ -82,6 +82,20 @@ Seoul-VPC-DEV.yml
 
 ![](.gitbook/assets/image%20%287%29.png)
 
+## TransitGateway 구성 확인
+
+
+
+AWS 관리콘솔 - VPC 를 선택합니다.
+
+4개의 VPC가 정상적으로 생성되었는지 확인합니다.
+
+
+
+AWS 관리콘솔 EC2를 선택합니다.
+
+EC2가 정상적으로 생성되었는지 확인합니다.
+
 #### Windows Session manager plugin 설치
 
 ```text
