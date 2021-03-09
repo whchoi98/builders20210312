@@ -96,7 +96,7 @@ AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2842%29.png)
+![](.gitbook/assets/image%20%2843%29.png)
 
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
@@ -143,13 +143,13 @@ Associations와 Propagation 탭을 눌러서, Seoul-VPC-HQ 연결과 Seoul-VPC-H
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
-![](.gitbook/assets/image%20%2838%29.png)
+![](.gitbook/assets/image%20%2839%29.png)
 
 **이제 East-To-West 라우팅 테이블 도메인을 확인합니다.**
 
 **해당 라우팅 테이블 도에인에는 Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 연결했습니다.**
 
-![](.gitbook/assets/image%20%2835%29.png)
+![](.gitbook/assets/image%20%2836%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다. Association 탭을 선택해서 3개의 VPC가 Association 되었는지 확인합니다.**
 
@@ -323,6 +323,39 @@ Seoul-VPC-DEV-Private-Subnet-A-RT
 {% endhint %}
 
 ### Task8. Production 연결
+
+Dev, Stage 환경에서 모든 준비가 완료되고 필요 요구에 따라 Production으로 연결이 필요하게 되었습니다.
+
+앞서 Task7 과 유사하게 Production에서 라우팅 테이블만 변경하면 Production, Staging , Dev는 모두 연결 됩니다.
+
+아래 명령을 통해 각 콘솔에서 Ping 시험을 해 봅니다.
+
+{% hint style="info" %}
+Cloudformation을 통해 Security Group은 시험에 필요한 트래픽은 모두 허용되어 있습니다.
+{% endhint %}
+
+```text
+##Seoul-VPC-PRD-Private-10.1.21.101
+ping SEOUL-VPC-DEV-Private
+
+```
+
+```text
+##Seoul-VPC-PRD-Private-10.1.21.101
+ping SEOUL-VPC-STG-Private
+```
+
+{% hint style="info" %}
+상호간의 트래픽이 허용되지 않습니다. 각 VPC에서 라우팅 테이블이 없기 때문입니다.
+{% endhint %}
+
+VPC- 가상 프라이빗 클라우드 - 라우팅 테이블에서 아래 라우팅 테이블 Tag 확인하고, 수정합니다.  
+
+```text
+Seoul-VPC-PRD-Private-Subnet-A-RT
+```
+
+![](.gitbook/assets/image%20%2835%29.png)
 
 ### Task9. Production과  HQ 연결
 
