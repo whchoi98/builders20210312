@@ -46,7 +46,7 @@ Seoul-VPC-HQ.yml
 
 다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다. 
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image%20%2815%29.png)
 
 {% hint style="warning" %}
 스택이름을 파일명과 다르게 입력하지 마십시요. 이후 과정에서 TransitGateway의 yaml파일은 , VPC yml 에서 생성된 값들을 import 해서 TGW를 생성합니다. 스택이름을 파일명과 다르게 할 경우, TGW를 생성할 때 에러가 발생합니다.
@@ -54,7 +54,7 @@ Seoul-VPC-HQ.yml
 
 별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
-![](.gitbook/assets/image%20%2822%29.png)
+![](.gitbook/assets/image%20%2824%29.png)
 
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
@@ -90,32 +90,32 @@ AWS 관리콘솔 - VPC 를 선택합니다.
 
 4개의 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2827%29.png)
+![](.gitbook/assets/image%20%2829%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2843%29.png)
+![](.gitbook/assets/image%20%2846%29.png)
 
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%282%29.png)
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](.gitbook/assets/image%20%2817%29.png)
 
 ### Task4. TGW Attachment 확인. 
 
 #### `VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2819%29.png)
+![](.gitbook/assets/image%20%2821%29.png)
 
 Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
 1. **TGW Routing Table과 Attachment가 연결된 상태를 확인**
 2. **Attachment가 VPC의 어떤 Subnet과 연결되었는지 확인** 
 
-![](.gitbook/assets/image%20%2826%29.png)
+![](.gitbook/assets/image%20%2828%29.png)
 
  아래에서 나머지 VPC들도 선택해서 확인해 봅니다. 
 
@@ -137,31 +137,31 @@ East-To-West 트래픽을 위한 라우팅 테이블 도메인, North-To-South �
 
 Associations와 Propagation 탭을 눌러서, Seoul-VPC-HQ 연결과 Seoul-VPC-HQ의 CIDR가 정상적으로 업데이트 되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2813%29.png)
+![](.gitbook/assets/image%20%2814%29.png)
 
-![](.gitbook/assets/image%20%2832%29.png)
+![](.gitbook/assets/image%20%2834%29.png)
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
-![](.gitbook/assets/image%20%2839%29.png)
+![](.gitbook/assets/image%20%2842%29.png)
 
 **이제 East-To-West 라우팅 테이블 도메인을 확인합니다.**
 
 **해당 라우팅 테이블 도에인에는 Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 연결했습니다.**
 
-![](.gitbook/assets/image%20%2836%29.png)
+![](.gitbook/assets/image%20%2839%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다. Association 탭을 선택해서 3개의 VPC가 Association 되었는지 확인합니다.**
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 Propagations 탭을 선택해서, 3개의 VPC CIDR를 Propagation 하는지 확인합니다.
 
-![](.gitbook/assets/image%20%2825%29.png)
+![](.gitbook/assets/image%20%2827%29.png)
 
 Routing 탭을 선택해서, 앞서 Propagation 된 Route가 정상적으로 등록되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](.gitbook/assets/image%20%2826%29.png)
 
 #### Cloudformation을 통해서 모두 정상적으로 구성되었습니다.
 
@@ -314,7 +314,7 @@ Seoul-VPC-STG-Private-Subnet-A-RT
 Seoul-VPC-DEV-Private-Subnet-A-RT
 ```
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2818%29.png)
 
 이제 다시 앞서 실행한 각 인스턴스에서의 Ping이 정상적으로 처리되는 지 확인합니다.
 
@@ -354,6 +354,35 @@ VPC- 가상 프라이빗 클라우드 - 라우팅 테이블에서 아래 라우�
 ```text
 Seoul-VPC-PRD-Private-Subnet-A-RT
 ```
+
+![](.gitbook/assets/image%20%2838%29.png)
+
+이제 다시 앞서 실행한 각 인스턴스에서의 Ping이 정상적으로 처리되는 지 확인합니다.
+
+{% hint style="success" %}
+**이제 Production과 Dev,Staging 환경이 연결되었습니다.**
+{% endhint %}
+
+{% hint style="warning" %}
+Production과 Staging간의 10.2.21.101만 잠시 Block 하고 싶습니다. 어떻게 해야 할까요?
+{% endhint %}
+
+Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 네트워크 장비에서 Null Routing과 유사합니다. 특정 라우팅테이블을 블랙홀에 빠뜨려서, 격리시키는 방식으로 Transit Gateway 를 통과시키지 못하도록 합니다.
+
+**`VPC- TransitGateway-TransitGateway` 라우팅 테이블을 선택합니다.** 
+
+**`Seoul-TGW-RT-East-To-West`** RouteTable을 선택하고, **`Route`** 탭을 선택합니다. **`Create Static Route`** 버튼을 누르고 아래와 같이 Staging Host만 격리 시켜 봅니다.
+
+```text
+###Blcokhole Target host
+10.2.21.101/32
+```
+
+![](.gitbook/assets/image%20%2812%29.png)
+
+**`VPC- TransitGateway-TransitGateway 라우팅테이` 라  에서** 
+
+![](.gitbook/assets/image%20%2816%29.png)
 
 ![](.gitbook/assets/image%20%2835%29.png)
 
