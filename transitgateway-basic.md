@@ -251,10 +251,28 @@ aws_ec2.sh  | grep "Seoul-VPC-HQ"
 
 ssm plugin을 통해서 인스턴스 ID 기반으로, 직접 Private Instance에 접속합니다. 인스턴스 ID는 **`"aws_ec2.sh"`**을 통해 확인 할 수 있습니다. 
 
-아래와 같은 명령을 통해서 직접 Private Instance에 접속합니다.
+아래와 같은 명령을 통해서 직접 4개의 Private Instance에 접속합니다. \(10.0.21.101, 10.1.21.101, 10.2.21.101, 10.2.31.101\)
+
+* **Seoul-VPC-HQ-Private-10.0.21.101**
+* **Seoul-VPC-PRD-Private-10.1.21.101**
+* **Seoul-VPC-STG-Private-10.2.21.101**
+* **Seoul-VPC-DEV-Private-10.3.21.101**
 
 ```text
 aws ssm start-session --target i-0c46e31a566a5770a
+```
+
+아래와 같이 명령을 입력하여, bash 콘솔로 접속하고, 시험할 호스트들을 host file에 등록합니다.
+
+```text
+sudo -s
+echo 10.0.21.101 SEOUL-VPC-HQ-Private >> /etc/hosts 
+echo 10.1.21.101 SEOUL-VPC-PRD-Private >> /etc/hosts
+echo 10.2.21.101 SEOUL-VPC-STG-Private >> /etc/hosts
+echo 10.3.21.101 SEOUL-VPC-DEV-Private >> /etc/hosts
+echo 10.4.21.101 SEOUL-VPC-PRT-Private >> /etc/hosts
+echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
+
 ```
 
 
