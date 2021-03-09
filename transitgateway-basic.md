@@ -44,7 +44,15 @@ Seoul-VPC-HQ.yml
 
 ![](.gitbook/assets/image%20%282%29.png)
 
+다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다. 
+
 ![](.gitbook/assets/image%20%284%29.png)
+
+{% hint style="warning" %}
+스택이름을 파일명과 다르게 입력하지 마십시요. 이후 과정에서 TransitGateway의 yaml파일은 , VPC yml 에서 생성된 값들을 import 해서 TGW를 생성합니다. 스택이름을 파일명과 다르게 할 경우, TGW를 생성할 때 에러가 발생합니다.
+{% endhint %}
+
+별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
 ![](.gitbook/assets/image%20%286%29.png)
 
@@ -56,9 +64,9 @@ Seoul-VPC-STG.yml
 Seoul-VPC-DEV.yml
 ```
 
-4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다. 
+4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.  4개의 VPC는 각 3분 내외에 생성됩니다. 동시에 수행해도 가능합니다.
 
-![](.gitbook/assets/image%20%287%29.png)
+![](.gitbook/assets/image%20%288%29.png)
 
 ### Task2. TGW구성하기.
 
@@ -66,9 +74,13 @@ Seoul-VPC-DEV.yml
 
 ![](.gitbook/assets/image.png)
 
+다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다. \(TGW는 스택이름을 다르게 지정해도, 본 랩을 구성하는데 문제가 없습니다.\)
+
 ![](.gitbook/assets/image%20%283%29.png)
 
+5분 이내에 TransitGateway가 완성됩니다.
 
+![](.gitbook/assets/image%20%287%29.png)
 
 #### Windows Session manager plugin 설치
 
