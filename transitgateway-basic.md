@@ -112,6 +112,9 @@ VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되�
 
 Seoul-TGW-Attach-Seoul-VPC-HQ를 선택하면, 이미 "Seoul-VPC-HQ"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
+1. **TGW Routing Table과 Attachment가 연결된 상태를 확인**
+2. **Attachment가 VPC의 어떤 Subnet과 연결되었는지 확인** 
+
 ![](.gitbook/assets/image%20%2820%29.png)
 
  아래에서 나머지 VPC들도 선택해서 확인해 봅니다. 
@@ -121,8 +124,6 @@ Seoul-TGW-Attach-Seoul-VPC-STG
 Seoul-TGW-Attach-Seoul-VPC-DEV
 Seoul-TGW-Attach-Seoul-VPC-PRD
 ```
-
-
 
 ### Task3. TGW Routing Table 확인. 
 
@@ -143,8 +144,6 @@ Propagation 탭을 눌러서, Seoul-VPC-HQ 테이블이 업데이트 되었는�
 North-To-South 라우팅 테이블의 Routes를 선택해서 Static Route 를 확인합니다. Seoul-VPC-HQ는 이미 앞서 propagate되어 있기 때문에 자동으로 테이블에 업데이트 되어 있습니다.
 
 0.0.0.0/0이 목적지인 트래픽은 모두 Seoul-VPC-HQ로 향하게 구성되어 있으며, 이것은 기본값이 아니고, Cloudformation yaml에서 선언한 것입니다. 다음 단원에서 Seoul-VPC-PRD의 인스턴스들이 , Seoul-VPC-HQ를 통해서 외부에 접속하도록 하기 위해서 설정되었습니다.
-
-![](.gitbook/assets/image%20%2817%29.png)
 
 **East-To-West Routing Table 도메인을 선택하여, 라우팅 테이블 속성을 확인합니다.**
 
