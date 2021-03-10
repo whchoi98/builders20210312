@@ -247,6 +247,14 @@ aws ssm start-session --target "Seoul-VPC-PART-Private-10.4.21.101 id"
 아래 명령어를 통해 Seoul-VPC-DEV,STG 의 인스턴스로 연결이 가능한지 확인합니다.
 
 ```text
+sudo -s
+echo 10.0.21.101 SEOUL-VPC-HQ-Private >> /etc/hosts 
+echo 10.1.21.101 SEOUL-VPC-PRD-Private >> /etc/hosts
+echo 10.2.21.101 SEOUL-VPC-STG-Private >> /etc/hosts
+echo 10.3.21.101 SEOUL-VPC-DEV-Private >> /etc/hosts
+echo 10.4.21.101 SEOUL-VPC-PRT-Private >> /etc/hosts
+echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
+ping SEOUL-VPC-DEV-Private
 
 ```
 
@@ -258,7 +266,17 @@ aws ssm start-session --target "Seoul-VPC-PART-Private-10.4.21.101 id"
 Seoul-VPC-PART에서 Seoul-VPC-PRD 로도 접근이 가능할 것입니다. 모든 VPC에서 10.0.0.0/8의 목적지를 TGW로 구성했긴 때문입니다. 보안 강화를 이러한 경우에는 VPC들의 CIDR을 Propagation 하지 않고, Static으로 처리하면 접근 제어가 가능합니다.
 {% endhint %}
 
-이제 Seoul-VPC-PART
+이제 Seoul-VPC-PART-Private-10.4.21.101 에서 DEV, STG로 트래픽을 체크를 해보세요. PRD도 확인 해 보세요.
+
+```text
+ping SEOUL-VPC-DEV-Private
+ping SEOUL-VPC-STG-Private
+ping SEOUL-VPC-PRD-Private
+```
+
+{% hint style="success" %}
+MultiAccount의 같은 리전에서 TGW 연동을 확인해 보았습니다. Propagation과 Static 조합을 통해서 VPC 격리와 보안을 강화하는 여러가지 디자인을 구성해 볼 수 있습니다.
+{% endhint %}
 
 ### 
 
