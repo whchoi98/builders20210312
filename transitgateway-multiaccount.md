@@ -6,13 +6,37 @@ description: 'Update : 2021-03-09'
 
 ## Transit Gateway MultiAccount 연결 
 
-### 구성 아키텍쳐 소개 
+### 개요 
 
 Transit Gateway는 동일 리전에서 서로 다른 계정에서 Transit Gateway  Peering을 사용할 수 없습니다.
 
 예를 들어 빌더스 컴퍼니와 협력사인 서밋 컴퍼니는 상호간에 Transit Gateway Peering을 동일 리전에서 연결할 수 없습니다. 이러한 경우 RAM\(Resource Access Manager\)를 통해서 간단하게 연결할 수 있는 디자인을 제공하고 있습니다.
 
 아래와 같이 서울 리전안에서 2개의 계정간에 개발 협력을 위해 연결하는 과정을 소개합니다.
+
+### RAM \(Resource Access Manager\) 소개
+
+AWS Resource Access Manager \(RAM\)는 AWS 계정 또는 AWS 조직 내에서 AWS 리소스를 쉽고 안전하게 공유 할 수있는 서비스입니다. AWS Transit Gateway, 서브넷, AWS License Manager 구성 및 Amazon Route 53 Resolver 규칙 리소스를 RAM과 공유 할 수 있습니다.
+
+많은 조직은 관리 또는 비용처리에 대한 부분에 대해 상호간의 영향 제한하기 위해 여러 계정을 사용합니다. RAM을 사용하면 여러 계정에 중복 리소스를 만들 필요가 없으므로 소유 한 모든 단일 계정에서 해당 리소스를 관리하는 운영 오버 헤드가 줄어 듭니다. 여러개 계정 환경에서 중앙 집중식으로 리소스를 생성하고 RAM을 사용하여 리소스 공유 생성, 리소스 지정 및 계정 선이라는 세 가지 간단한 단계로 계정간에 해당 리소스를 공유 할 수 있습니다. RAM은 추가 비용없이 사용할 수 있습니다.
+
+**RAM을 사용하면 다음과 같은 장점이 있습니다.**
+
+#### 운영 오버 헤드 감소 <a id="Reduce_Operational_Overhead"></a>
+
+중앙에서 AWS 리소스를 조달하고 RAM을 사용하여 서브넷 또는 라이선스 관리자 구성과 같은 리소스를 다른 계정과 공유합니다. 이렇게하면 다중 계정 환경의 모든 계정에 중복 리소스를 프로비저닝 할 필요가 없으므로 모든 계정에서 해당 리소스를 관리하는 운영 오버 헤드가 줄어 듭니다.
+
+#### 보안 및 가시성 향상 <a id="Improve_Security_and_Visibility"></a>
+
+RAM은 AWS Identity and Access Management \(IAM\)에 설정된 기존 정책과 권한을 활용하여 공유 리소스의 사용을  관리합니다. RAM은 또한 Amazon CloudWatch 및 AWS CloudTrail과의 통합을 통해 알람를 설정하고, 로그를 시각화하기 위해 공유 리소스에 대한 포괄적 인 가시성을 제공합니다.
+
+#### 비용 최적화 <a id="Optimize_Costs"></a>
+
+계정간에 AWS License Manager 구성과 같은 리소스를 공유하면 회사의 여러 부분에서 라이선스를 활용하여 활용도를 높이고 비용을 최적화 할 수 있습니다.
+
+### 구성 아키텍쳐 소개 
+
+
 
 ## 서로 다른 계정에서 TGW 연동
 
@@ -32,7 +56,11 @@ git clone https://github.com/whchoi98/builders20210312
 
 **2.Cloudformation 생성.**
 
-Seoul-VPC-PART를 Cloudformation 을 기반으로 생성합니다.
+{% hint style="warning" %}
+**서밋 컴퍼니는 서울리전에서 새로운 계정으 Seoul-VPC-PART라는 이름으로 VPC를 생성합니다.**
+{% endhint %}
+
+**`Seoul-VPC-PART`** 를 Cloudformation 을 기반으로 생성합니다.
 
 ![](.gitbook/assets/image%20%2834%29.png)
 
@@ -60,15 +88,23 @@ Seoul-VPC-PART.yml
 
 ![](.gitbook/assets/image%20%2812%29.png)
 
-새로운 계정의 번호를 복사해 둡니다.
+서밋 컴퍼니 계의 번호를 복사해 둡니다. RAM 구성시 계정 정보가 필요합니다.
 
 ![](.gitbook/assets/image%20%2852%29.png)
 
 ### Task 2. RAM 구성하기
 
+이제 다시 빌더스 컴퍼니 계정에서 수행합니다.
 
+{% hint style="info" %}
+빌더스 컴퍼니에서 생성된 TGW를 서밋 컴퍼니에게 제공할 것입니다. 반드시 RAM 구성은 리소스 제공하는 계정에서 실행합니다.
+{% endhint %}
+
+**AWS 관리콘솔에서 RAM 을 선택하고, 새로운 윈도우 창을 오픈합니다.**
 
 ![](.gitbook/assets/image%20%284%29.png)
+
+**`Resource Access Manager - 내가 공유: 리소스 공유`** 를 선택합니다.
 
 ![](.gitbook/assets/image%20%2811%29.png)
 
