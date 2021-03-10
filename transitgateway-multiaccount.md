@@ -36,7 +36,11 @@ RAM은 AWS Identity and Access Management \(IAM\)에 설정된 기존 정책과 
 
 ### 구성 아키텍쳐 소개 
 
+[TransitGateway 구성하기](transitgateway-basic.md)에서 생성한 빌더스 컴퍼니의 Transit Gateway를 동일한 서울 리전, 다른 어카운트\(서밋 컴퍼니\) Seoul-VPC-PART VPC에서 사용하려고 하는 목표 구성입니다.
 
+AWS RAM\(Resource Access Manager\)를 이용하여 빌더스 컴퍼니의 Transit Gateway를 연계해서, 협력사인 서밋 컴퍼니 자원을 사용해 봅니다.
+
+![](.gitbook/assets/image%20%2879%29.png)
 
 ## 서로 다른 계정에서 TGW 연동
 
