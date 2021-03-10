@@ -104,9 +104,20 @@ Seoul-VPC-PART.yml
 
 ![](.gitbook/assets/image%20%284%29.png)
 
-**`Resource Access Manager - 내가 공유: 리소스 공유`** 를 선택합니다.
+**`Resource Access Manager - 내가 공유: 리소스 공유`** 에서 **`"리소스 공유 생성"`** 을 선택합니다.
 
 ![](.gitbook/assets/image%20%2811%29.png)
+
+아래와  값을 입력합니다.
+
+* **이름** - "리소스 공유 이름" 을 입력합니다. 
+
+```text
+Seoul-TGW
+```
+
+* **`리소스 유형 선택 - 전송 게이트웨이 (Transit Gateway)`**를 선택하고, 생성해 놓은 TGW를 선택합니다.
+* **`Principal - 외부 계정`** 허용 을 선택합니다. 앞서 새롭게 Seoul-VPC-PART VPC 자원이 생성된 계정의 번호를 입력합니다. \(앞서 복사해 둔 서밋 컴퍼니의 계정입니다.\)
 
 ![](.gitbook/assets/image%20%2839%29.png)
 
