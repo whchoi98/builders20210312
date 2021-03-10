@@ -7,7 +7,7 @@ description: 'Update : 2021-03-10'
 ## 사전 준비 사항 및 도구 소개 
 
 * **키 페어**
-* **Cloud9 구성**
+* **Cloud9 구성 - EC2 인스턴스 접속과 yml 수**
 * **System Manager & Session Manager \(랩에서 Cloudformation으로 자동배포 합니다.\)** 
 
 랩 시작에 앞서 다음과 같은 사전 준비를 합니다.
