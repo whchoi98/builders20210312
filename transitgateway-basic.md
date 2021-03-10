@@ -61,9 +61,9 @@ Seoul-VPC-HQ
 **다운로드 받은 yaml 파일 3개를 추가로 반복적으로 수행합니다.** 
 
 ```text
-Seoul-VPC-PRD.yml
-Seoul-VPC-STG.yml
-Seoul-VPC-DEV.yml
+Seoul-VPC-PRD
+Seoul-VPC-STG
+Seoul-VPC-DEV
 ```
 
 4개의 VPC가 모두 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다.  4개의 VPC는 각 3분 내외에 생성됩니다. 동시에 수행해도 가능합니다.

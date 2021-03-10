@@ -149,6 +149,10 @@ git clone https://github.com/whchoi98/buildernet.git
 
 ```
 
+완료 된 이후 아래와 같이 Cloud9 좌측 패널에서 yml 파일을 다운로드 받습니다. 
+
+![](../.gitbook/assets/image%20%2894%29.png)
+
 
 
 
