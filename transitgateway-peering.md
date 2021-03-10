@@ -46,7 +46,7 @@ aws ec2 import-key-pair --key-name builders20210312 --public-key-material fileb:
 
 다운로드 받아 둔 파일 중에서 IAD-VPC.yml 파일을 업로드하고, 다음을 선택합니다. 
 
-![](.gitbook/assets/image%20%28101%29.png)
+![](.gitbook/assets/image%20%28102%29.png)
 
 다음을 선택하고, 아래와 같아 스택이름은 파일명과 동일하게 입력합니다.
 
@@ -58,11 +58,11 @@ IAD-VPC
 
 별도로 설정 변경없이, 다음 단계를 진행하고 , 승인을 선택하고 스택생성합니다.
 
-![](.gitbook/assets/image%20%28102%29.png)
+![](.gitbook/assets/image%20%28103%29.png)
 
 정상적으로 구성되면 아래와 같이 Cloudformation에서 확인 할 수 있습니다. VPC는 각 3분 내외에 생성됩니다.
 
-![](.gitbook/assets/image%20%28100%29.png)
+![](.gitbook/assets/image%20%28101%29.png)
 
 
 
@@ -70,9 +70,28 @@ IAD-VPC
 
 ![](.gitbook/assets/image%20%2897%29.png)
 
+![](.gitbook/assets/image%20%28100%29.png)
 
 
 
+```text
+aws ec2 describe-instances --query 'Reservations[].Instances[].[Tags[?Key==`Name`] | [0].Value, Placement.AvailabilityZone,InstanceId, InstanceType, ImageId,State.Name, PrivateIpAddress, PublicIpAddress ]' --output table --region us-east-1
+
+```
+
+
+
+```text
+aws ssm start-session --target "IAD-VPC-Private-10.4.21.101" --region us-east-1
+
+```
+
+
+
+```text
+ping SEOUL-VPC-DEV-Private
+
+```
 
 
 
