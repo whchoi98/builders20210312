@@ -153,7 +153,11 @@ AWS 계정 - VPC - TransitGateway에 빌더스 컴퍼니 계정의 Seoul-TGW가 
 
 ![](.gitbook/assets/image%20%2835%29.png)
 
-Transit Gateway Attachment를 생성하기 위해, **`VPC - Transit Gateway - Transit Gateway 연결`**을 선택해서 새로운 Attachment를 생성합니다.
+### 
+
+### Task 3. TGW 연동하기
+
+서밋 컴퍼디 계정에서 Transit Gateway Attachment를 생성하기 위해, **`VPC - Transit Gateway - Transit Gateway 연결`**을 선택해서 새로운 Attachment를 생성합니다.
 
 * Transit Gateway ID : 공유된 TGW
 * Attachment name tag : Attachment 이름 \(Seoul-TGW-Attach-Seoul-VPC-PART\)
@@ -256,7 +260,7 @@ Seoul-VPC-PART에서 Seoul-VPC-PRD 로도 접근이 가능할 것입니다. 모�
 
 이제 Seoul-VPC-PART
 
-### Task 3. TGW 연동하기
+### 
 
 
 
