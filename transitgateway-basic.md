@@ -312,7 +312,7 @@ Seoul-VPC-STG와 Seoul-VPC-DEV를 TGW를 통해 연결 구성해 봅니다.
 
 East-To-West에는 이미 Seoul-VPC-STG, Seoul-VPC-DEV의 CIDR가 Propagated 되어 있기 때문에, TGW에서 작업은 불필요합니다. 하지만 각 VPC에서 라우팅 테이블이 구성되어 있지 않기 때문에 상호간 연결되지 않습니다.
 
-아래 명령을 통해 각 콘솔에서 Ping 시험을 해 봅니다.
+아래 명령을 통해 각 Cloud9 터미널 콘에서 Ping 시험을 해 봅니다.
 
 {% hint style="info" %}
 Cloudformation을 통해 Security Group은 시험에 필요한 트래픽은 모두 허용되어 있습니다.
@@ -361,7 +361,7 @@ Dev, Stage 환경에서 모든 준비가 완료되고 필요 요구에 따라 Pr
 
 앞서 Task7 과 유사하게 Production에서 라우팅 테이블만 변경하면 Production, Staging , Dev는 모두 연결 됩니다.
 
-아래 명령을 통해 각 콘솔에서 Ping 시험을 해 봅니다.
+아래 명령을 통해 각 Cloud9 터미널 콘솔에서 Ping 시험을 해 봅니다.
 
 {% hint style="info" %}
 Cloudformation을 통해 Security Group은 시험에 필요한 트래픽은 모두 허용되어 있습니다.
