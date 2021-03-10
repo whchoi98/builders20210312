@@ -239,7 +239,7 @@ export AWS_DEFAULT_PROFILE=builders
 아래와 같이 Seoul-VPC-PART-Private-10.4.21.101 인스턴스 id를 조회합니다.
 
 ```text
-aws_ec2.sh  | grep "Seoul-VPC-PART-Private-10.4.21.101"
+~/environment/buildernet/aws_ec2_ext.sh  | grep "Seoul-VPC-PART-Private-10.4.21.101"
 ```
 
 Seoul-VPC-PART-Private-10.4.21.101 인스턴스에 접속합니다.  
