@@ -41,7 +41,7 @@ Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV를 Cloudformation 을 
 **앞서 다운로드 받은 yaml 파일들 중에 `Seoul-VPC-HQ.yml` 파일을 업로드 합니다.**
 
 ```text
-Seoul-VPC-HQ.yml
+Seoul-VPC-HQ
 ```
 
 ![](.gitbook/assets/image%20%2814%29.png)

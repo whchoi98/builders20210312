@@ -1,7 +1,10 @@
 # Table of contents
 
 * [소개 및 목차](README.md)
-* [사전 준비](undefined.md)
+
+## 시작에 앞서 <a id="undefined-1"></a>
+
+* [사전 준비](undefined-1/undefined.md)
 
 ## TransitGateway
 

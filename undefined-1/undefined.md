@@ -22,9 +22,9 @@ Cloud9은 비용이 별도로 부과되지 않은 Cloud 기반의 IDE 콘솔 도
 
 **`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키 페어- 키페어 생성` 을 선택합니다.**
 
-![](.gitbook/assets/image%20%2882%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
-![](.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2886%29.png)
 
 **아래와 같이 키페어 이름을 입력합니다. 해당 키 페어는 이름을 동일하게 합니다.**
 
@@ -34,15 +34,15 @@ builders20210312
 
 **파일 형식을 `pem`을 선택하고, `키 페어 생성` 을 클릭합니다.**
 
-![](.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 **생성되면 pem key를 로컬 PC에 다운 받습니다**. \(저장 경로는 각 운영체제의 기본 다운로드 폴더 입니다.\)
 
-![](.gitbook/assets/image%20%2888%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
 **`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키 페어` 을 선택하고 정상적으로 만들어 졌는지 확인합니다.**
 
-![](.gitbook/assets/image%20%2881%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 {% hint style="info" %}
 해당 키페어 이름은 다음 실습에서 Cloudformation에 이미 binding 되어 있습니다. 다르게 할 경우에는 Cloudformation 진행과정에서 다시 선택해도 됩니다.
@@ -78,7 +78,7 @@ AWS Cloud9를 사용하면 새로운 프로젝트를 손쉽게 시작할 수 있
 
 **Create environment** 를 선택합니다.
 
-![](.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 **Step1.** Name environment에 아래와 같이 이름을 입력하고, **Next step**을 클릭합니다. 사용자의 Cloud9은 리전당 unique 해야 합니다. 각자 영문이름을 입력하세요.
 
@@ -86,11 +86,11 @@ AWS Cloud9를 사용하면 새로운 프로젝트를 손쉽게 시작할 수 있
 mybuilders-xxxx
 ```
 
-![](.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 Step2. Configure settings 에서 기본값으로 사용하고, Cost-Saving setting - After four hours 를 선택합니다. 기본값은 30분이며, 30분 후에는 절전 모드로 변경됩니다. 랩에서는 4시간 동안 동작 시키도록 합니다.
 
-![](.gitbook/assets/image%20%2887%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
 {% hint style="info" %}
 여기서 잠깐 !!!! Cloud9 인스턴스는 어디에 배치되나요? 
@@ -100,7 +100,7 @@ Step2. Configure settings 에서 기본값으로 사용하고, Cost-Saving setti
 
 #### Step3. Review 단계입니다. 앞서 생성한 내용을 검토하는 단계입니다. `Create environment`를 선택합니다.
 
-![](.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2880%29.png)
 
 이제 2~3분 뒤면 EC2 인스턴스 기반의 Cloud IDE 생성됩니다.
 
