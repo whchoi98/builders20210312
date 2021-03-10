@@ -181,19 +181,19 @@ Routing 탭을 선택해서, 앞서 Propagation 된 Route가 정상적으로 등
 
 모든 랩의 구성 시험은 Private 인스턴스로 시험합니다. Cloudformation을 통해 System Manager와 Session Manager를 사용할 수 있도록 자동 배포 구성하였습니다.
 
-Session Manager를 사용할 수 있도록 아래오 같이 각 환경에 맞추어서 AWS Session Manager Plugin을 설치합니다.
+Session Manager를 사용할 수 있도록 아래 같이 각 PC환경에 맞추어서 AWS Session Manager Plugin을 설치합니다.  Cloud9을 사용하거나 웹콘솔에서 Session Manager를 사용하면 각 PC환경에서 설치할 필요가 없습니다.
 
 {% hint style="info" %}
-사전에 반드시 AWS CLI를 설치합니다.
+PC 환경에서는 사전에 반드시 AWS CLI를 설치합니다. Cloud9으로 사용할 때는 별도 구성하지 않아도 됩니다.
 {% endhint %}
 
-#### Windows Session manager plugin 설치
+#### Windows Session manager plugin 설치 \(Cloud9, 웹기반 세션 매니저 사용시 생략\)
 
 ```text
 https://s3.amazonaws.com/session-manager-downloads/plugin/latest/windows/SessionManagerPluginSetup.exe
 ```
 
-#### Mac OS용 Session manager plugin 설치
+#### Mac OS용 Session manager plugin 설치\(Cloud9, 웹기반 세션 매니저 사용시 생략\)
 
 번들 설치 관리자를 다운로드합니다.
 
@@ -213,39 +213,34 @@ unzip sessionmanager-bundle.zip
 sudo ./sessionmanager-bundle/install -i /usr/local/sessionmanagerplugin -b /usr/local/bin/session-manager-plugin
 ```
 
-**Fedora Linux 에서 Session Manager Plugin 설치**
+**Fedora Linux 에서 Session Manager Plugin 설치\(Cloud9, 웹기반 세션 매니저 사용시 생략\)**
 
 ```text
 curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
 sudo yum install -y session-manager-plugin.rpm
 ```
 
-**Ubuntu에서 Session Manager Plugin 설치**
+**Ubuntu에서 Session Manager Plugin 설치\(Cloud9, 웹기반 세션 매니저 사용시 생략\)**
 
 ```text
 curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
 sudo dpkg -i session-manager-plugin.deb
 ```
 
-앞서 Git Clone을 통해서 아래 Shell을 받습니다.
+**아래와 같이 Cloud9에서 shell을 실행해 봅니다.**
 
 ```text
-git clone https://github.com/whchoi98/useful-shell
-```
+~/environment/buildernet/aws_ec2_ext.sh |grep "Seoul-VPC-HQ"
+~/environment/buildernet/aws_ec2_ext.sh |grep "Seoul-VPC-PRD"
+~/environment/buildernet/aws_ec2_ext.sh |grep "Seoul-VPC-STG"
+~/environment/buildernet/aws_ec2_ext.sh |grep "Seoul-VPC-DEV"
 
-아래와 같이 shell을 실행해 봅니다.
-
-```text
-aws_ec2.sh |grep "Seoul-VPC-HQ"
-aws_ec2.sh |grep "Seoul-VPC-PRD"
-aws_ec2.sh |grep "Seoul-VPC-STG"
-aws_ec2.sh |grep "Seoul-VPC-DEV"
 ```
 
 실행한 예제입니다.
 
 ```text
-aws_ec2.sh  | grep "Seoul-VPC-HQ"
+~/environment/buildernet/aws_ec2_ext.sh | grep "Seoul-VPC-HQ"
 |  Seoul-VPC-HQ-Public-10.0.12.102  |  ap-northeast-2b |  i-0aa1c4c96f8924b33 |  t3.small |  ami-006e2f9fa7597680a |  running |  10.0.12.102  |  3.34.195.174    |
 |  Seoul-VPC-HQ-Private-10.0.22.101 |  ap-northeast-2b |  i-078a899d467028886 |  t3.small |  ami-006e2f9fa7597680a |  running |  10.0.22.101  |  None            |
 |  Seoul-VPC-HQ-Private-10.0.22.102 |  ap-northeast-2b |  i-0a7398a27be7d07f4 |  t3.small |  ami-006e2f9fa7597680a |  running |  10.0.22.102  |  None            |
@@ -267,10 +262,15 @@ ssm plugin을 통해서 인스턴스 ID 기반으로, 직접 Private Instance에
 * **Seoul-VPC-DEV-Private-10.3.21.101**
 
 ```text
-aws ssm start-session --target i-0c46e31a566a5770a
+aws ssm start-session --target "인스턴스 ID"
 ```
 
-아래와 같이 명령을 입력하여, bash 콘솔로 접속하고, 시험할 호스트들을 host file에 등록합니다.
+Cloud9에서 터미널 창을 4개를 추가로 오픈하고, 아래와 같이 각 4개의 호스트에 명령을 입력하여, bash 콘솔로 접속하고, 시험할 호스트들을 host file에 등록합니다.
+
+* **Seoul-VPC-HQ-Private-10.0.21.101**
+* **Seoul-VPC-PRD-Private-10.1.21.101**
+* **Seoul-VPC-STG-Private-10.2.21.101**
+* **Seoul-VPC-DEV-Private-10.3.21.101**
 
 ```text
 sudo -s
