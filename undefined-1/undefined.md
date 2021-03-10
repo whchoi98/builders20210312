@@ -24,7 +24,7 @@ Cloud9은 비용이 별도로 부과되지 않은 Cloud 기반의 IDE 콘솔 도
 
 ![](../.gitbook/assets/image%20%2882%29.png)
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
 **아래와 같이 키페어 이름을 입력합니다. 해당 키 페어는 이름을 동일하게 합니다.**
 
@@ -38,7 +38,7 @@ builders20210312
 
 **생성되면 pem key를 로컬 PC에 다운 받습니다**. \(저장 경로는 각 운영체제의 기본 다운로드 폴더 입니다.\)
 
-![](../.gitbook/assets/image%20%2888%29.png)
+![](../.gitbook/assets/image%20%2891%29.png)
 
 **`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키 페어` 을 선택하고 정상적으로 만들어 졌는지 확인합니다.**
 
@@ -78,7 +78,7 @@ AWS Cloud9를 사용하면 새로운 프로젝트를 손쉽게 시작할 수 있
 
 **Create environment** 를 선택합니다.
 
-![](../.gitbook/assets/image%20%2884%29.png)
+![](../.gitbook/assets/image%20%2886%29.png)
 
 **Step1.** Name environment에 아래와 같이 이름을 입력하고, **Next step**을 클릭합니다. 사용자의 Cloud9은 리전당 unique 해야 합니다. 각자 영문이름을 입력하세요.
 
@@ -86,11 +86,11 @@ AWS Cloud9를 사용하면 새로운 프로젝트를 손쉽게 시작할 수 있
 mybuilders-xxxx
 ```
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 Step2. Configure settings 에서 기본값으로 사용하고, Cost-Saving setting - After four hours 를 선택합니다. 기본값은 30분이며, 30분 후에는 절전 모드로 변경됩니다. 랩에서는 4시간 동안 동작 시키도록 합니다.
 
-![](../.gitbook/assets/image%20%2887%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 {% hint style="info" %}
 여기서 잠깐 !!!! Cloud9 인스턴스는 어디에 배치되나요? 
@@ -102,9 +102,31 @@ Step2. Configure settings 에서 기본값으로 사용하고, Cost-Saving setti
 
 ![](../.gitbook/assets/image%20%2880%29.png)
 
-이제 2~3분 뒤면 EC2 인스턴스 기반의 Cloud IDE 생성됩니다.
+이제 2~3분 뒤면 EC2 인스턴스 기반의 Cloud IDE 생성됩니다. 
 
+### Cloud9 둘러보기 및 환경 구성 
 
+Cloud9은 훌륭한 Cloud IDE 환경을 제공합니다. Code 저작도구와 터미널 등을 제공하고 있기 때문에, 이 랩에서 활용해 봅니다.
+
+환경 설정
+
+Cloud9 화면 우측 상단의 톱니바퀴 모양 Preference 를 선택합니다.
+
+![](../.gitbook/assets/image%20%2885%29.png)
+
+프로젝트, User 설정, 터미널 설 등 다양한 환경을 구성할 수 있습니다. \( 이 랩에서는 자세한 소개를 생략합니다.\)
+
+먼저 키 페어 만들기 에서 생성하고, 로컬 PC로 다운로드 받은  pem key를 Cloud9 콘솔에 업로드 합니다.
+
+![](../.gitbook/assets/image%20%2884%29.png)
+
+#### 정상적으로 업로드하였다면, 아래와 같이 확인 할 수 있습니다. 
+
+![](../.gitbook/assets/image%20%2889%29.png)
+
+#### 랩이 종료된 후에는 보안상 삭제합니다. 
+
+이 랩을 위해서 C 
 
 ```text
 git clone https://github.com/whchoi98/
