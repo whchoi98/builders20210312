@@ -28,7 +28,7 @@ description: 이 웹사이트는 AWS Builders 2021년 3월 12일 실습과 데�
 
 
 
-#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 슬랙채널에서 문의 가능합니다. 🙋 
+#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 [슬랙채널](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)에서 문의 가능합니다. 🙋 
 
 #### 
 
