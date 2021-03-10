@@ -470,6 +470,6 @@ TGW North-To-South 라우팅테이블에 아래와 같이 Seoul-VPC-HQ로 트래
 **이제 Seoul-VPC-PRD-Private-10.1.21.101 인스턴스에서 정상적으로 외부 접속이 되는지 확인해 봅니다.**
 
 {% hint style="success" %}
-Transit Gateway 구성에 대한 모든 실습을 마쳤습니다. 연결되는 다음 Chapter를 사용하지 않을 경우, Cloudformation에서 Stack을 Seoul-TGW.yml부터 삭제하고, 나머지 VPC yml을 삭제하면 모든 자원이 삭제 됩니다.
+Transit Gateway 구성에 대한 모든 실습을 마쳤습니다. 연결되는 다음 Chapter를 사용하지 않을 경우, Cloudformation에서 Stack을 **Seoul-TGW.ym**l 부터 삭제하고, **나머지 VPC yml을 삭제**하면 모든 자원이 삭제 됩니다.
 {% endhint %}
 
