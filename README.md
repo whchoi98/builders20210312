@@ -8,13 +8,23 @@ description: 이 웹사이트는 AWS Builders 2021년 3월 12일 실습과 데�
 
 ### [TransitGateway Overview](transitgateway-overview.md)
 
+#### Transit Gateway에 대한 전반적인 내용을 소개합니다.
+
 ### [TransitGateway 구성하기](transitgateway-basic.md)
+
+#### Multi VPC 환경에서 Transit Gatway 구성과 North-To-South, East-To-West 트래픽의 제어와 연결에 대해서 소개합니다.
 
 ### [TransitGateway MultiAccount](transitgateway-multiaccount.md)
 
+#### 동일 리전의 멀티 어카운트 환경에서 RAM을 이용한 TGW공유 방법을  소개합니다.
+
 ### [TransitGateway Peering](transitgateway-multiaccount.md)
 
+#### 서로 다른 리전에서 TGW간 Peering 방법을 소개합니다.
+
 ### [TransitGateway Monitoring](transitgateway-monitoring.md)
+
+#### Transit Gateway 구성 완료이후 모니터링에 대한 방법을 소개합니다.
 
 ## Gateway Load balancer
 
