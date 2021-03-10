@@ -126,10 +126,26 @@ Cloud9 화면 우측 상단의 톱니바퀴 모양 Preference 를 선택합니�
 
 #### 랩이 종료된 후에는 보안상 삭제합니다. 
 
-이 랩을 위해서 C 
+**이 랩을 위해서 아래 내용을 복사해서 설치합니다.**
 
 ```text
-git clone https://github.com/whchoi98/
+##aws cli version 2.0 upgrade
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+##aws cli completer
+which aws_completer
+export PATH=/usr/local/bin:$PATH
+source ~/.bash_profile
+complete -C '/usr/local/bin/aws_completer' aws
+
+##aws ssm plugin install
+curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" -o "session-manager-plugin.rpm"
+sudo yum install -y session-manager-plugin.rpm
+
+##source download
+git clone https://github.com/whchoi98/buildernet.git
 
 ```
 
