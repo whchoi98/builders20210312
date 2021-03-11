@@ -20,7 +20,7 @@ Task1. 네트워크 매니저 생성
 
 **`VPC - Transit Gateway - 네트워크 관리자`** 를 선택하고, **`Create a Global Network`** 를 선택합니다.
 
-![](.gitbook/assets/image%20%28142%29.png)
+![](.gitbook/assets/image%20%28143%29.png)
 
 글로벌 네트워크 생성에서 아래 내용을 설정하고, 글로벌 네트워크를 생성합니다.
 
@@ -30,7 +30,7 @@ Task1. 네트워크 매니저 생성
 MyNetwork
 ```
 
-![](.gitbook/assets/image%20%28126%29.png)
+![](.gitbook/assets/image%20%28127%29.png)
 
 정상적으로 생성되었는지 확인하고, 생성된 **`글로벌 네트워크를 선택`**합니다.
 
@@ -38,11 +38,11 @@ MyNetwork
 
 **`전송 게이트웨이 등록`**을 선택합니다.
 
-![](.gitbook/assets/image%20%28123%29.png)
+![](.gitbook/assets/image%20%28124%29.png)
 
 앞서 만들어 둔 TransitGateway를 선택하고, 전송게이트웨이 등록을 클릭합니다.
 
-![](.gitbook/assets/image%20%28145%29.png)
+![](.gitbook/assets/image%20%28146%29.png)
 
 전송 게이트웨이가 정상적으로 등록되었는지 확인합니다.
 
@@ -54,7 +54,7 @@ Network Manager 좌측 대시보드의 **`대시보드`** 메뉴를 선택하고
 
 이제 메뉴들을 살펴 봅니다. 먼저 지리적 메뉴를 선택하고 Geo Map 상태를 살펴봅니다.
 
-![](.gitbook/assets/image%20%28131%29.png)
+![](.gitbook/assets/image%20%28132%29.png)
 
 토폴로지를 선택하고, 논리적 구성도를 확인합니다.
 

@@ -15,6 +15,7 @@
 * [TransitGateway MultiAccount](transitgateway-multiaccount.md)
 * [TransitGateway Peering](transitgateway-peering.md)
 * [TransitGateway Monitoring](transitgateway-monitoring.md)
+* [TGW 자원 삭제](tgwdelete.md)
 
 ## Gateway Loadbalancer
 
