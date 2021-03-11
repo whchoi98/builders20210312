@@ -24,13 +24,15 @@ AWS 콘솔 창 상단 우측바에서 리전을 선택하고, "us-east-1" "버�
 
 ### Task 1. VPC 구성하기
 
-**`새로운 계정에 접속`** 하고, Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다.
+**`새로운 리전(버지니아 북부 us-east-1 접속`** 하고, Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다.
 
 **1.사전 준비하기**
 
 **다운로드 받은 파일 중에 IAD-VPC.yml, IAD-TGW.yml 을 사용합니다.**
 
-앞서 만들어 둔 keypair는 서울리전에서만 존재합니다. us-east-1 버지니아 리전에서도 사용할 수 있도록 Cloud9 콘솔 터미널에서 아래와 같이 명령을 입력하고 서울리전의 public key를 전송합니다.
+앞서 서울 리전에서 만들어 둔 keypair \(public key\)는 서울리전에서만 존재합니다. 
+
+us-east-1 버지니아 리전에서도 사용할 수 있도록 Cloud9 콘솔 터미널에서 아래와 같이 명령을 입력하고 서울리전의 public key를 전송합니다.
 
 ```text
 ### Converting from private key to public key
@@ -41,6 +43,14 @@ cd ~/environment
 aws ec2 import-key-pair --key-name builders20210312 --public-key-material fileb://builders20210312.pub --region us-east-1
 
 ```
+
+정상적으로 public key가 us-east-1 리전 Keypair에 전송되었는지 확인합니다.
+
+**`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키페어`** 를 클릭하고, **`builders20210321`**  이라는 Public key가 전송되었는지 확인합니다.
+
+ 
+
+![](.gitbook/assets/image%20%28104%29.png)
 
 **2.Cloudformation 생성.**
 
