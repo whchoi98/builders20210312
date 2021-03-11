@@ -16,6 +16,8 @@ Transit Gateway Network Manager\(Network Manager\)를 사용하면 전송 게이
 
 
 
+
+
 ![](.gitbook/assets/image%20%28142%29.png)
 
 ![](.gitbook/assets/image%20%28126%29.png)
