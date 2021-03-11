@@ -477,9 +477,31 @@ Transit Gateway 구성에 대한 모든 실습을 마쳤습니다. 연결되는 
 
 ## TransitGateway 구성하기 과정
 
-1. 4개의 VPC 생성 -  Cloudformation 을 통해서, 다운로드 받은 4개의 yaml 파일 업로드 \(Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV\)하고 , VPC 생성
-2. 서울 리전\(ap-northeast-2\)에서 TransitGateway 생성 - Cloudformation을 통해서, 다운로드 받은 yaml 파일 업로드\(Seoul-TGW\)하고, TGW 생성
-3. VPC 구성 확인.
+**1.4개의 VPC 생성** 
+
+- Cloudformation 을 통해서, 다운로드 받은 4개의 yaml 파일 업로드 \(Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV\)하고 , VPC 생성
+
+**2.서울 리전\(ap-northeast-2\)에서 TransitGateway 생성** 
+
+- Cloudformation을 통해서, 다운로드 받은 yaml 파일 업로드\(Seoul-TGW\)하고, TGW 생성
+
+**3.생성된 VPC, EC2 구성 확인.**
+
+**4. TGW 구성확인**
+
+**5. TGW Attachment \(연결\) 확인**
+
+**6. TGW Routing Table 확인**
+
+**7. Session Manager를 통해서 EC2 인스턴스 접속하기**
+
+**8. 시나리오 이해하기**
+
+**9. Staging VPC와 Dev VPC 연결하기 - TGW를 통해 연결하**
+
+**10. Production 연결하기 - TGW 연결하기.** 
+
+**11. Production과 HQ 연결하기 - 서로 다른 라우팅 테이블에서 연결하기.** 
 
 #### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\([https://whchoi-hol.slack.com/archives/C01QM79Q4BD](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\)에서 문의 가능합니다. 
 
