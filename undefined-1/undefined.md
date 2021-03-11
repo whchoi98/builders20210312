@@ -155,6 +155,19 @@ git clone https://github.com/whchoi98/buildernet.git
 
 
 
+## 사전 준비 단계 과정 
+
+1. **키페어 만들기 - Private Key 와 Public Key 만들고, Private Key는 안전하게 로컬 PC에 내려 받습니다.**
+2. **Cloud9 만들기 - Cloud9 을 생성합니다.**
+3. **Cloud9 환경 구성 - 나만의 Cloud9 환경을 꾸미고, 이번 랩에서 필요한 설정들을 구성합니다.**
+
+* PC에 내려받은 Private key를 복사해서, 동일한 이름으로 Cloud9에 업로드
+* Cloud9 터미널에 aws cli v2 설치, aws cli 자동완성 설치
+* Session manager plugin 설치
+* LAB에서 사용될 Cloudformation용 YAML 파일과 Shell 다운로드
+
+
+
 #### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\([https://whchoi-hol.slack.com/archives/C01QM79Q4BD](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\)에서 문의 가능합니다. 
 
 
