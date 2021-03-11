@@ -42,7 +42,7 @@ AWS RAM\(Resource Access Manager\)를 이용하여 빌더스 컴퍼니의 Transi
 
 ![](.gitbook/assets/image%20%2879%29.png)
 
-## 1.서로 다른 계정에서 TGW 연동
+## 2.서로 다른 계정에서 TGW 연동
 
 ### Task 1. VPC 구성하기
 
