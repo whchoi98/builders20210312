@@ -4,7 +4,7 @@ description: 'Update : 2021-03-09'
 
 # TransitGateway MultiAccount
 
-## Transit Gateway MultiAccount 연결 
+## 1.Transit Gateway MultiAccount 연결 
 
 ### 개요 
 
@@ -42,7 +42,7 @@ AWS RAM\(Resource Access Manager\)를 이용하여 빌더스 컴퍼니의 Transi
 
 ![](.gitbook/assets/image%20%2879%29.png)
 
-## 서로 다른 계정에서 TGW 연동
+## 1.서로 다른 계정에서 TGW 연동
 
 ### Task 1. VPC 구성하기
 
