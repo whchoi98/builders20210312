@@ -4,11 +4,13 @@ description: 'Update : 2021-03-09'
 
 # TransitGateway Overview
 
+## 1.AWS Transit Gateway 소개 
+
 AWS Transit Gateway는 중앙 허브를 통해 VPC와 온프레미스 네트워크를 연결합니다. 복잡한 피어링 관계를 제거하여 네트워크를 간소화합니다. 클라우드 라우터 역할을 하므로 새로운 연결을 한 번만 추가하면 됩니다.
 
 글로벌 확장 시 리전 간 피어링을 사용하면 [AWS 글로벌 네트워크](https://aws.amazon.com/ko/about-aws/global-infrastructure/)에서 AWS Transit Gateway를 하나로 연결할 수 있습니다.. 데이터는 자동으로 암호화되고 퍼블릭 인터넷을 통하지 않습니다. 중앙 위치에 있으므로 [AWS Transit Gateway 네트워크 관리자](https://aws.amazon.com/ko/transit-gateway/network-manager/)를 사용하여 전체 네트워크를 보고 SD-WAN\(소프트웨어 정의 광역 네트워크\) 디바이스에 연결할 수 있습니다.
 
-###  AWS Transit Gateway 사용 이점 <a id="Benefits_of_using_AWS_Transit_Gateway"></a>
+## 2.AWS Transit Gateway 사용 이점
 
 ####  간편한 연결 <a id="Easier_connectivity"></a>
 
@@ -26,7 +28,7 @@ Amazon VPC와 AWS Transit Gateway 간의 트래픽은 AWS의 글로벌 프라이
 
 AWS Transit Gateway 멀티캐스트 지원은 동일한 콘텐츠를 다수의 특정 대상으로 분산합니다. 광범위한 온프레미스 멀티캐스트 네트워크가 필요하지 않으며 화상 회의, 미디어 또는 전화 회의와 같은 처리량이 많은 애플리케이션에 필요한 대역폭이 감소합니다.
 
-###  네트워크 간소화 <a id="Simplify_your_network"></a>
+##  3. 네트워크 간소화 디자인 
 
 ####  AWS Transit Gateway 미사용 시 <a id="Without_AWS_Transit_Gateway"></a>
 
