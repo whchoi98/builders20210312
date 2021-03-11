@@ -12,13 +12,11 @@ Transit Gateway는 서로 다른 리전에서 동일한 Transit Gateway를 사�
 
 이번 챕터에서는 us-east-1 에서 VPC와 TGW를 생성하고 상호간에 연결 구성을 해 봅니다.
 
-### 구성 아키텍쳐 소개
-
-AWS 관리 콘솔 창 상단 우측바에서 리전을 선택하고, **`"us-east-1" "버지니아 북부"`**를 선택합니다.
+웹브라우저에서 하나의 탭을 더 열고 AWS 관리 콘솔 창 상단 우측바에서 리전을 선택하고, **`"us-east-1" "버지니아 북부"`**를 선택합니다.
 
 ![](.gitbook/assets/image%20%2899%29.png)
 
-
+서울 리전 VPC 화면 탭과 버지니아 북부 리전 VPC 화면 탭 2개를 브라우저에서 사용합니다.
 
 ## 2. EC2,VPC,TGW 구성 
 
@@ -98,27 +96,27 @@ IAD-VPC를 연결할 TransitGateway를 버지니아 리전\(us-east-1\)에 Cloud
 
 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28107%29.png)
+![](.gitbook/assets/image%20%28109%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28111%29.png)
+![](.gitbook/assets/image%20%28113%29.png)
 
 ### Task 4. TGW 구성 확인
 
 **`AWS 관리콘솔 - VPC - TransitGateway`** 를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28112%29.png)
+![](.gitbook/assets/image%20%28114%29.png)
 
-![](.gitbook/assets/image%20%28106%29.png)
+![](.gitbook/assets/image%20%28107%29.png)
 
 ### Task5. TGW Attachment 확인.
 
 **`VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.**
 
-![](.gitbook/assets/image%20%28109%29.png)
+![](.gitbook/assets/image%20%28111%29.png)
 
 IAD-TGW-Attach-IAD-VPC를 선택하면, 이미 "IAD-VPC"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
@@ -129,13 +127,13 @@ IAD-TGW-Attach-IAD-VPC를 선택하면, 이미 "IAD-VPC"의 TGW-Subnet ID에 연
 
 **`VPC-Transit Gateway-Transit Gateway- Transit Gateway 라우팅 테이블`** 을 선택해서 라우팅 테이블 구성을 확인해 봅니다. Associations와 Propagation 탭을 눌러서, IAD-VPC 연결과 IAD-VPC의 CIDR가 정상적으로 업데이트 되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28110%29.png)
+![](.gitbook/assets/image%20%28112%29.png)
 
-![](.gitbook/assets/image%20%28108%29.png)
+![](.gitbook/assets/image%20%28110%29.png)
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
-![](.gitbook/assets/image%20%28105%29.png)
+![](.gitbook/assets/image%20%28106%29.png)
 
 **Cloudformation을 통해서 모두 정상적으로 구성되었습니다.** 👏 
 
@@ -188,7 +186,7 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 
 ```
 
-#### Task8. 시나리오 이해하기
+### Task8. 시나리오 이해하기
 
 **1.빌더스 컴퍼니는 아래와 같은 VPC를 2개의 리전에 소유하고 있습니다.**
 
@@ -203,6 +201,38 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 **3. 미국의 개발인력들은 한국의 리전의 인터넷을 사용하지는 않을 것입니다.**
 
 **목표 구성과 필요작업은 아래와 같습니다.**
+
+### **Task9. 버지니아 리전과 한국 리전 연결 \(Peering\)**
+
+**`AWS 관리콘솔 - VPC - Transit Gateway - Transit Gateway` 연결  을 선택합니다.**
+
+**`Create Transit Gateway Attachment` 를 선택합니다.**
+
+![](.gitbook/assets/image%20%28108%29.png)
+
+**1.Transit Gateway ID - 버지니아에서 생성한 IAD-TGW를 선택합니다.**
+
+**2.Attachment Type - `Peering Connection` 을 선택 합니다. \(주의 !!!\)**
+
+**3.Attachment name tag - 연결 이름을 입력합니다.**
+
+```text
+IAD-TO-SEOUL
+```
+
+**4.Region - Seoul\(ap-northeast-2\)를 선택합니다. \(원격지 리전을 의미합니다.\)**
+
+**5.Transit Gateway\(accepter\) - 원격지 서울 리전에 만들어져 있는 Transit Gateway ID를 입력합니다.**
+
+**미리 열어둔 브라우저의 서울리전 탭에, AWS 관리콘솔 좌측 상단에서 ap-northeast-2 \(서울리전\)을 선택합니다.**
+
+**AWS 관리 콘솔 - VPC - Transit Gateway - Transit Gateway 를 선택하고,  Transit Gateway ID를 복사합니다.**
+
+**이제 5번의 Transit Gateway \(accepter\)에 서울 리전의 Transit Gateway ID값을 붙여 넣습니다.**
+
+![](.gitbook/assets/image%20%28105%29.png)
+
+
 
 \*\*\*\*
 
