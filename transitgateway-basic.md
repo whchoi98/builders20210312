@@ -88,7 +88,7 @@ Seoul-VPC-DEV
 
 ## 2.TransitGateway 구성 확인
 
-### Task3.TGW 구성 확인 
+### Task3.VPC, EC2 구성 확인 
 
 AWS 관리콘솔 - VPC 를 선택합니다.
 
@@ -102,6 +102,8 @@ EC2가 정상적으로 생성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%2876%29.png)
 
+### Task 4. TGW 구성 확인 
+
 VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
 ![](.gitbook/assets/image%20%285%29.png)
@@ -110,7 +112,7 @@ VPC - TransitGateway를 선택해서, Transit Gateway 정상적으로 구성되�
 
 ### 
 
-### Task4. TGW Attachment 확인. 
+### Task5. TGW Attachment 확인. 
 
 #### `VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.
 
@@ -133,7 +135,7 @@ Seoul-TGW-Attach-Seoul-VPC-PRD
 
 ### 
 
-### Task5. TGW Routing Table 확인. 
+### Task6. TGW Routing Table 확인. 
 
 **`VPC-Transit Gateway-Transit Gateway- Transit Gateway 라우팅 테이블`** 을 선택해서 라우팅 테이블 구성을 확인해 봅니다. 라우팅 테이블은 2개로 구성되어 있습니다.
 
@@ -177,7 +179,7 @@ Routing 탭을 선택해서, 앞서 Propagation 된 Route가 정상적으로 등
 
 ## 3. TGW 기반 트래픽 제어
 
-### Task6. SSM 기반 시험하기 
+### Task7. SSM 에서 인스턴스 확인  
 
 모든 랩의 구성 시험은 Private 인스턴스로 시험합니다. Cloudformation을 통해 System Manager와 Session Manager를 사용할 수 있도록 자동 배포 구성하였습니다.
 
@@ -283,9 +285,9 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 
 ```
 
-### 시나리오 소개
+### Task8. 시나리오 이해하기 
 
-#### 다음과 같은 시나리오 구성으로 Task7~9를 수행합니다.
+#### 다음과 같은 시나리오 구성으로 Task9~11를 수행합니다.
 
 **1.빌더스 컴퍼니는 아래와 같은 VPC를 하나의 계정에 소유하고 있습니다.**
 
@@ -472,6 +474,12 @@ TGW North-To-South 라우팅테이블에 아래와 같이 Seoul-VPC-HQ로 트래
 {% hint style="success" %}
 Transit Gateway 구성에 대한 모든 실습을 마쳤습니다. 연결되는 다음 Chapter를 사용하지 않을 경우, Cloudformation에서 Stack을 **Seoul-TGW.ym**l 부터 삭제하고, **나머지 VPC yml을 삭제**하면 모든 자원이 삭제 됩니다.
 {% endhint %}
+
+## TransitGateway 구성하기 과정
+
+1. 4개의 VPC 생성 -  Cloudformation 을 통해서, 다운로드 받은 4개의 yaml 파일 업로드 \(Seoul-VPC-HQ, Seoul-VPC-PRD, Seoul-VPC-STG, Seoul-VPC-DEV\)하고 , VPC 생성
+2. 서울 리전\(ap-northeast-2\)에서 TransitGateway 생성 - Cloudformation을 통해서, 다운로드 받은 yaml 파일 업로드\(Seoul-TGW\)하고, TGW 생성
+3. VPC 구성 확인.
 
 #### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\([https://whchoi-hol.slack.com/archives/C01QM79Q4BD](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\)에서 문의 가능합니다. 
 
