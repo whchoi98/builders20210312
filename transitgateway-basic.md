@@ -308,7 +308,7 @@ echo 10.5.21.101 IAD-VPC-Private >> /etc/hosts
 
 ### 
 
-### Task7. Staging과 Dev 연결 
+### Task9. Staging과 Dev 연결 
 
 Seoul-VPC-STG와 Seoul-VPC-DEV를 TGW를 통해 연결 구성해 봅니다.
 
@@ -357,7 +357,7 @@ Seoul-VPC-DEV-Private-Subnet-A-RT
 
 ### 
 
-### Task8. Production 연결
+### Task10. Production 연결
 
 Dev, Stage 환경에서 모든 준비가 완료되고 필요 요구에 따라 Production으로 연결이 필요하게 되었습니다.
 
@@ -421,7 +421,7 @@ Transit Gateway에는 Blackhole 기능이 있습니다. 이것은 전통적인 �
 
 ### 
 
-### Task9. Production과  HQ 연결
+### Task11. Production과  HQ 연결
 
 이제 모든 작업이 완료되고, Production 개시 단계입니다. 보안 강화를 위해 SEOUL-HQ-VPC를 통해서 외부 연결을 하도록 합니다.
 
