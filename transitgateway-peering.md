@@ -4,7 +4,7 @@ description: 'Update: 2021-03-09'
 
 # TransitGateway Peering
 
-## Transit Gateway Peering 
+## 1.Transit Gateway Peering 
 
 ### 개요
 
@@ -20,7 +20,9 @@ AWS 콘솔 창 상단 우측바에서 리전을 선택하고, "us-east-1" "버�
 
 ![](.gitbook/assets/image%20%2899%29.png)
 
-#### Task 1. VPC 구성하기
+## 2. TGW Peering 구성 
+
+### Task 1. VPC 구성하기
 
 **`새로운 계정에 접속`** 하고, Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다.
 
