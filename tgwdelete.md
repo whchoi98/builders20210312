@@ -12,7 +12,7 @@ description: '2021-03-10'
 
 * aws 관리콘솔 - 버지니아 북부 - Cloudformation - IAD-TGW 선택 - 삭제
 
-![](.gitbook/assets/image%20%28149%29.png)
+![](.gitbook/assets/image%20%28150%29.png)
 
 * aws 관리콘솔 - 버지니아 북부 - Cloudformation - IAD-VPC 선택 - 삭제
 
@@ -33,4 +33,14 @@ EC2, VPC, TransitGateway 자원이 모두 삭제 되었는지 확인합니다.
 ### **Task2. 서울 리 자원  삭제  확인**
 
 EC2, VPC, TransitGateway 자원이 모두 삭제 되었는지 확인합니다.
+
+
+
+## 3. Cloud9 자원 삭제
+
+aws 관리콘솔 - 서울 - Cloud9 에서 아래와 같이 생성된 Cloud9 IDE를 선택하고 삭제합니다.
+
+![](.gitbook/assets/image%20%28134%29.png)
+
+TransitGateway MultiAccount 랩도 실행하였다면,  해당 계정에서 Cloudformation 스택을 삭제합니다.
 

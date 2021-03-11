@@ -96,19 +96,19 @@ IAD-VPC를 연결할 TransitGateway를 버지니아 리전\(us-east-1\)에 Cloud
 
 VPC가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28135%29.png)
+![](.gitbook/assets/image%20%28136%29.png)
 
 AWS 관리콘솔 - EC2를 선택합니다.
 
 EC2가 정상적으로 생성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28147%29.png)
+![](.gitbook/assets/image%20%28148%29.png)
 
 ### Task 4. TGW 구성 확인
 
 **`AWS 관리콘솔 - VPC - TransitGateway`** 를 선택해서, Transit Gateway 정상적으로 구성되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28148%29.png)
+![](.gitbook/assets/image%20%28149%29.png)
 
 ![](.gitbook/assets/image%20%28128%29.png)
 
@@ -116,7 +116,7 @@ EC2가 정상적으로 생성되었는지 확인합니다.
 
 **`VPC-Transit Gateway-Transit Gateway 연결` 을 선택해서, Transit Gateway attachment가 정상적으로 구성되었는지 확인합니다.**
 
-![](.gitbook/assets/image%20%28144%29.png)
+![](.gitbook/assets/image%20%28145%29.png)
 
 IAD-TGW-Attach-IAD-VPC를 선택하면, 이미 "IAD-VPC"의 TGW-Subnet ID에 연결되어 있는 것을 확인할 수 있습니다. 또한 Routing Table에 Association 된 상태도 확인이 가능합니다.
 
@@ -127,9 +127,9 @@ IAD-TGW-Attach-IAD-VPC를 선택하면, 이미 "IAD-VPC"의 TGW-Subnet ID에 연
 
 **`VPC-Transit Gateway-Transit Gateway- Transit Gateway 라우팅 테이블`** 을 선택해서 라우팅 테이블 구성을 확인해 봅니다. Associations와 Propagation 탭을 눌러서, IAD-VPC 연결과 IAD-VPC의 CIDR가 정상적으로 업데이트 되었는지 확인합니다.
 
-![](.gitbook/assets/image%20%28145%29.png)
+![](.gitbook/assets/image%20%28146%29.png)
 
-![](.gitbook/assets/image%20%28142%29.png)
+![](.gitbook/assets/image%20%28143%29.png)
 
 propagation이 정상적으로 구성되었기 때문에 Route 탭을 선택하면, Route Type은 Propagated 되었다고 표기됩니다.
 
@@ -230,7 +230,7 @@ IAD-TO-SEOUL
 
 **AWS 관리 콘솔 - VPC - Transit Gateway - Transit Gateway 를 선택하고,  Transit Gateway ID를 복사합니다.**
 
-![](.gitbook/assets/image%20%28141%29.png)
+![](.gitbook/assets/image%20%28142%29.png)
 
 **이제 5번의 Transit Gateway \(accepter\)에 서울 리전의 Transit Gateway ID값을 붙여 넣고, Create Attachment를 클릭하고 완료합니다. 아래와 같이 새로운 Transit Gateway Attachment가 생성되었습니다.**
 
@@ -248,7 +248,7 @@ IAD-TO-SEOUL
 
 상단 **`"작업"`** 을 선택하고 **`Accept`** 선택합니다. 
 
-![](.gitbook/assets/image%20%28134%29.png)
+![](.gitbook/assets/image%20%28135%29.png)
 
 Accept를 선택하면, pending 으로 전환되고 7~8분 이후 available로 변경됩니다.
 
@@ -256,7 +256,7 @@ Accept를 선택하면, pending 으로 전환되고 7~8분 이후 available로 �
 Seoul-To-Virginia
 ```
 
-![](.gitbook/assets/image%20%28136%29.png)
+![](.gitbook/assets/image%20%28137%29.png)
 
 이제 Attachment가 Association으로 변경되면, Transit Gateway-Transit Gateway Route Table 탭에서 Create Association 을 시켜 줍니다.
 
@@ -272,7 +272,7 @@ AWS 콘솔 - VPC - Transit Gateway - Transit Gateway 라우팅 테이블 을 선
 
 새로운 peering을 Association 시켜 줍니다.
 
-![](.gitbook/assets/image%20%28138%29.png)
+![](.gitbook/assets/image%20%28139%29.png)
 
 ![](.gitbook/assets/image%20%28133%29.png)
 
@@ -308,7 +308,7 @@ Choose attachmet는 Seoul-To-Virginia를 선택합니다.
 
 합니다.
 
-![](.gitbook/assets/image%20%28139%29.png)
+![](.gitbook/assets/image%20%28140%29.png)
 
 CIDR 주소를 서울리전의 Seoul-VPC-DEV CIDR 주소를 입력합니다.
 
@@ -336,7 +336,7 @@ Choose attachmet는 IAD-TO-SEOUL 선택하고, Create Static Route를 선택합�
 
 ![](.gitbook/assets/image%20%28105%29.png)
 
-![](.gitbook/assets/image%20%28140%29.png)
+![](.gitbook/assets/image%20%28141%29.png)
 
 Task 11. 트래픽 전송 확인
 

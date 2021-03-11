@@ -20,7 +20,7 @@ Task1. 네트워크 매니저 생성
 
 **`VPC - Transit Gateway - 네트워크 관리자`** 를 선택하고, **`Create a Global Network`** 를 선택합니다.
 
-![](.gitbook/assets/image%20%28143%29.png)
+![](.gitbook/assets/image%20%28144%29.png)
 
 글로벌 네트워크 생성에서 아래 내용을 설정하고, 글로벌 네트워크를 생성합니다.
 
@@ -42,7 +42,7 @@ MyNetwork
 
 앞서 만들어 둔 TransitGateway를 선택하고, 전송게이트웨이 등록을 클릭합니다.
 
-![](.gitbook/assets/image%20%28146%29.png)
+![](.gitbook/assets/image%20%28147%29.png)
 
 전송 게이트웨이가 정상적으로 등록되었는지 확인합니다.
 
