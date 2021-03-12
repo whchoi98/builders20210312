@@ -86,5 +86,5 @@ Network Manager 좌측 대시보드의 **`대시보드`** 메뉴를 선택하고
 
 #### 
 
-#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/)\([https://whchoi-hol.slack.com/](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\) \#aws-builders-adv-networking-hol 에서 문의 가능합니다. 
+#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/)\([https://whchoi-hol.slack.com/](https://whchoi-hol.slack.com/archives/C01QM79Q4BD) , [https://join.slack.com/t/whchoi-hol/shared\_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A](https://join.slack.com/t/whchoi-hol/shared_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A)\) \#aws-builders-adv-networking-hol 에서 문의 가능합니다.
 

@@ -30,7 +30,7 @@ EC2, VPC, TransitGateway 자원이 모두 삭제 되었는지 확인합니다.
 
 * aws 관리콘솔 - 서울  - Cloudformation - VPC 선택 - 삭제 \(나머지 모든 VPC들 삭제\) 
 
-### **Task2. 서울 리 자원  삭제  확인**
+### **Task2. 서울 리전  자원  삭제  확인**   
 
 EC2, VPC, TransitGateway 자원이 모두 삭제 되었는지 확인합니다.
 
@@ -43,4 +43,6 @@ aws 관리콘솔 - 서울 - Cloud9 에서 아래와 같이 생성된 Cloud9 IDE�
 ![](.gitbook/assets/image%20%28134%29.png)
 
 TransitGateway MultiAccount 랩도 실행하였다면,  해당 계정에서 Cloudformation 스택을 삭제합니다.
+
+#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/)\([https://whchoi-hol.slack.com/](https://whchoi-hol.slack.com/archives/C01QM79Q4BD) , [https://join.slack.com/t/whchoi-hol/shared\_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A](https://join.slack.com/t/whchoi-hol/shared_invite/zt-necc66t1-n6pSgrVfGW1w6SLAQUTP8A)\) \#aws-builders-adv-networking-hol 에서 문의 가능합니다.
 
