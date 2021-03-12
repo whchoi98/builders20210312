@@ -18,6 +18,10 @@ System Manager와 Session Manager는 Cloudformation 기반의 Yaml을 통해 모
 
 Cloud9은 비용이 별도로 부과되지 않은 Cloud 기반의 IDE 콘솔 도구 입니다.
 
+랩 실습을 위한 기본 구성은 아래와 같습니다.
+
+![](../.gitbook/assets/image%20%28151%29.png)
+
 ## 키 페어 만들기
 
 **`AWS 관리 콘솔 - EC2 - 네트워크 및 보안 - 키 페어- 키페어 생성` 을 선택합니다.**
