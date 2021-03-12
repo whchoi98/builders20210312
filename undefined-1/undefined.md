@@ -20,7 +20,7 @@ Cloud9은 비용이 별도로 부과되지 않은 Cloud 기반의 IDE 콘솔 도
 
 랩 실습을 위한 기본 구성은 아래와 같습니다.
 
-![](../.gitbook/assets/image%20%28151%29.png)
+![](../.gitbook/assets/image%20%28152%29.png)
 
 ## 키 페어 만들기
 
@@ -94,7 +94,7 @@ mybuilders-xxxx
 
 Step2. Configure settings 에서 기본값으로 사용하고, Cost-Saving setting - After four hours 를 선택합니다. 기본값은 30분이며, 30분 후에는 절전 모드로 변경됩니다. 랩에서는 4시간 동안 동작 시키도록 합니다.
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%28151%29.png)
 
 {% hint style="info" %}
 여기서 잠깐 !!!! Cloud9 인스턴스는 어디에 배치되나요? 
