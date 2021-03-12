@@ -497,5 +497,5 @@ Transit Gateway 구성에 대한 모든 실습을 마쳤습니다. 연결되는 
 
 **11. Production과 HQ 연결하기 - 서로 다른 라우팅 테이블에서 연결하기.** 
 
-#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\([https://whchoi-hol.slack.com/archives/C01QM79Q4BD](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\)에서 문의 가능합니다. 
+#### 해당 LAB의 질문 사항은 whchoi98@gmail.com/ whchoi@amazon.com 또는 🙋♂ [슬랙채널](https://whchoi-hol.slack.com/)\([https://whchoi-hol.slack.com/](https://whchoi-hol.slack.com/archives/C01QM79Q4BD)\) \#aws-builders-adv-networking-hol 에서 문의 가능합니다.
 
