@@ -20,13 +20,7 @@ Cloudformation을 통해 기본이 되는 VPC구성을 먼저 구성합니다.
 
 #### 1.사전 준비하기 
 
-서울 리전에 4개의 VPC를 구성하고, 사전에 구성된 TGW를 배포합니다.
-
-아래 Github에서 실습에 사용할 Cloudformation yaml 파일을 다운로드 받습니다.
-
-```text
-git clone https://github.com/whchoi98/builders20210312
-```
+서울 리전에 4개의 VPC를 구성하고, 사전에 구성된 TGW를 배포합니다. 이미 사전 준비 단계에서 다운로드 받아 두었습니다.
 
 #### 2.Cloudformation 생성.
 
